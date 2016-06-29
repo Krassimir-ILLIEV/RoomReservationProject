@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.Models
 {
-    class TestModel
+    class Coordinates
     {
     }
 }
