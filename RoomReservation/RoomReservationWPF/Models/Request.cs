@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using RoomReservationWPF.Models;
 namespace RoomReservation.Models
 {
-    class Request
+    using RoomReservationWPF.Common;
+    using RoomReservationWPF.Contracts;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    class Request:IRoom
     {
 
-        public enumRoomTypes RoomType { get; set; }
-        public int Capacity { get; set; }
-        public decimal rentPerHour { get; set; }
 
+        
 
-        /*-	roomId;
--	roomType (conference, cinema,etc, type Enum);
--	capacity (in terms of people);
--	list(MultimediaDevice) //some inheritance here, perhaps //PATTERN COMPOSITE
--	rentPerHour //rent that depends on time of day so that analysis and optimizations could be made;
--	rentPriceCategory (derived from rentPerHour, e.g. price category 1,2,3,4 having some ranges);
--	location (type Building);
--	floor;
-         */ 
+        public Request(enumRoomTypes roomType, 
+            int capacity, 
+            List<MultimediaDevice> listMultimedia, 
+            enumRentPriceRange rentPriceRange, Location location)
+        {
+            Room modelDesiredRoom = new Room();
+        }
 
     }
 }

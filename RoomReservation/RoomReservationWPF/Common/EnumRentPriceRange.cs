@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RoomReservation.Models
+namespace RoomReservationWPF.Common
 {
-    class Building
+    public enum enumRentPriceRange
     {
-
+        Between0and200,
+        Between201and500
     }
+
 }

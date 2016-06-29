@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace RoomReservation.Models
 {
-    class Building
+    public enum enumRoomTypes
     {
-
+        ConfereneRoom,
+        VIPConferenceRoom,
+        PresentationRoom,
+        CinemaRoom
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using RoomReservation.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,19 @@ namespace RoomReservationWPF
         public MainWindow()
         {
             InitializeComponent();
+            
+            Room r1 = new Room();
+            Trace.WriteLine("-----");
+
+            
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            tbSettingText.Text = "Print stuff.";
+        }
+
+        
+        
     }
 }

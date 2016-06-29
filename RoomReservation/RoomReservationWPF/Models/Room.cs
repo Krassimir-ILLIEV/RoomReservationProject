@@ -1,14 +1,42 @@
-﻿using System;
+﻿
+
+namespace RoomReservation.Models
+{
+    using RoomReservationWPF.Common;
+using RoomReservationWPF.Contracts;
+using RoomReservationWPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace RoomReservation.Models
-{
-    class Room
+    class Room:IRoom
     {
-        public int RoomId { get; set; }
+        private static int roomIdGenerator = 1;
+        private readonly int roomID;
+        private enumRoomTypes roomType;
+
+        public Room()
+        {
+           //for model room
+        }
+
+        public Room(enumRoomTypes roomType, 
+            int capacity, 
+            List<MultimediaDevice> listMultimedia, 
+            enumRentPriceRange rentPriceRange,
+            Location location)
+        {
+            this.roomID = (roomIdGenerator++); //assigns current value to id and increments roomIdGen for next call
+        }
+
+        public int RoomId 
+        {
+            get
+            {
+                return this.roomID;
+            }
+        } //set in constructor
      /*roomId;
 -	roomType (conference, cinema,etc, type Enum);
 -	capacity (in terms of people);
@@ -19,6 +47,8 @@ namespace RoomReservation.Models
 -	floor;
 -	ToString(); //prints all information about a room.
       */
-
+        
     }
+
+
 }

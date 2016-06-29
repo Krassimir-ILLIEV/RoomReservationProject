@@ -13,5 +13,6 @@ namespace RoomReservationWPF
     /// </summary>
     public partial class App : Application
     {
+        //Console.WriteLine("grid");
     }
 }
