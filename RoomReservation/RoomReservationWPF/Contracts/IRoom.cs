@@ -6,7 +6,7 @@ namespace RoomReservationWPF.Contracts
 {
     interface IRoom
     {
-        int RoomID;
+        int RoomID ;
         enumCapacityRange CapacityRange {get; set;}
         //add corresponding fields
 
