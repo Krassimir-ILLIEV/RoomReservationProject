@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoomReservationWPF.Contracts
 {
-    interface IRequest
+    interface IRequest:IRoom
     {
     }
 }
