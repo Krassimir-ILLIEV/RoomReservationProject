@@ -1,0 +1,57 @@
+List of Initial Classes: Employee, Room, Building, Event, Schedule, RoomManager, Grid
+
+
+Abstract class Employee / could also be an interface
+
+Employee fields:
+-	priority (Enum) (Higher priority employees could override reservations made by lower priority emps);
+-	title;
+-	location; (So that distances could be calculated between the employee building and other buildings. Some coordinate system would thus be needed).
+
+Employee class could be inherited by classes Intern, Manager -> Unit manager,DepartmentHead. Add polymorphism here.
+
+
+Abstract class Room / could also be an interface
+
+Room fields:
+-	roomType (conference, etc, Enum);
+-	capacity;
+-	multimediaType and availability; //some inheritance here, perhaps //pattern COMPOSITE
+-	availableTimeSlots/occupiedTimeSlots.
+This class could be inherited by other room types, maybe?
+
+
+Class Building:
+
+Fields:
+-	location;
+-	rentPriceCategory. ??
+
+
+Class Event:
+
+Fields:
+-	priority;
+-	size (in terms of people);
+-	timeslot;
+-	employee In Charge.
+
+
+Class Schedule:
+
+This class should contain and display information about all buildings and their rooms and availability status.
+
+
+Class RoomManager:
+This class should be able to make recommendations based on input criteria.
+-	getListOfSuggestions;
+-	cancelReservation;
+-	clearForm;
+
+
+Class GUI:
+Buttons and events go here.
+
+
+Class Grid:
+This class represents a 2D coordinate system that keeps track of buildings and calculates distances between them. Or, each building could keep its coordinates as fields.
