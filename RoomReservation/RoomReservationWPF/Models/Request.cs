@@ -9,10 +9,7 @@ namespace RoomReservation.Models
     using System.Text;
     using System.Threading.Tasks;
     class Request:IRoom
-    {
-
-
-        
+    {       
 
         public Request(enumRoomTypes roomType, 
             int capacity, 

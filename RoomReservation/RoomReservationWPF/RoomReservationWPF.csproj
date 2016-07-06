@@ -55,6 +55,7 @@
     </ApplicationDefinition>
     <Compile Include="Common\enumCapacityRange.cs" />
     <Compile Include="Common\enumRentPriceRange.cs" />
+    <Compile Include="Contracts\IRequest.cs" />
     <Compile Include="Contracts\IRoom.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Models\Building.cs" />
