@@ -18,7 +18,7 @@ namespace RoomReservationWPF.Contracts
 
         enumRentPriceRange RentPriceRange { get; set; }
 
-        //decimal RentPricePerHour { get; set; }
+        decimal RentPricePerHour { get; set; }
 
         Location Location { get; set; }
 
