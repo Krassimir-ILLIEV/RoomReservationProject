@@ -7,15 +7,15 @@
     using RoomReservationWPF.Common;
 
     [Serializable]
-    public class DepartmentManager : Manager, IRegularEmployee, ISerializable
+    public class DepartmentManager : UnitManager, IRegularEmployee, ISerializable
     {
         public DepartmentManager() : base()
         {
             //default
         }
 
-        public DepartmentManager(string name, string title, Location location, int yearsOfExperience, string department)
-            : base(name, title, location, yearsOfExperience)
+        public DepartmentManager(string name, string title, Location location, int yearsOfExperience, string unit, string department)
+            : base(name, title, location, yearsOfExperience, unit)
         {
             this.Department = department;
         }

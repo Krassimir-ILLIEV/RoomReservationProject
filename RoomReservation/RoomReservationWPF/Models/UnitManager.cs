@@ -26,13 +26,7 @@
             this.Unit = (string)info.GetValue("Unit", typeof(string));
         }
 
-        public override enumEmployeePriority Priority
-        {
-            get
-            {
-                return enumEmployeePriority.High;
-            }
-        }
+        //prirority from manager- medium
 
         public string Unit { get; private set; }
 
