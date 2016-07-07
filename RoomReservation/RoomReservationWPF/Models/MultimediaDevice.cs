@@ -14,7 +14,6 @@
 
         public MultimediaDevice()
         {
-
         }
 
         public MultimediaDevice(string model, int brightness, int suportedScreen)

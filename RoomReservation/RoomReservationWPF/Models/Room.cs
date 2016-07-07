@@ -26,7 +26,7 @@
         {
         }
 
-        public Room(int roomId, int capacity, int floor, List<MultimediaDevice> listMultimedia,
+        public Room(int capacity, int floor, List<MultimediaDevice> listMultimedia,
         enumRoomTypes roomType, enumCapacityRange capacityRnage, enumRentPriceRange rentPriceRnage,
         decimal rentPricePerHour, Location location)
         {
@@ -39,15 +39,8 @@
             this.rentPriceRange = RentPriceRange;
             this.rentPricePerHour = RentPricePerHour;
             this.location = Location;
-        }
-
-        public Room(enumRoomTypes roomType,
-            int capacity,
-            List<MultimediaDevice> listMultimedia,
-            enumRentPriceRange rentPriceRange,
-            Location location)
-        {
-            this.roomID = (roomIdGenerator++); //assigns current value to id and increments roomIdGen for next call
+            this.roomID = roomIdGenerator;
+            roomIdGenerator++;
         }
 
         public int RoomId
