@@ -36,7 +36,7 @@ namespace RoomReservationWPF.Models
             //location
         }
 
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("EmployeeName", this.Name, typeof(string));
             info.AddValue("EmployeeTitle", this.Title, typeof(string));
@@ -60,6 +60,16 @@ namespace RoomReservationWPF.Models
 
         public Location EmployeeLocation {  get; private set; }
 
-        
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.AppendLine(this.Name);
+            builder.AppendLine(string.Format("Position: {0}", this.GetType().Name));
+            builder.AppendLine(string.Format("Title: {0}", this.Title));
+            builder.AppendLine(string.Format("ID: {0}", this.EmployeeID));
+            builder.AppendLine(string.Format("Priority: {0}", this.Priority));
+            //location
+            return builder.ToString();
+        }
     }
 }
