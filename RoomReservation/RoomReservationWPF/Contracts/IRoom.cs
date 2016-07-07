@@ -6,17 +6,23 @@ namespace RoomReservationWPF.Contracts
 {
     interface IRoom
     {
-       enumCapacityRange capacityRange;
+        enumCapacityRange CapacityRange {get; set;}
         //add corresponding fields
 
         enumRoomTypes RoomType { get; set; }
+
         int Capacity { get; set; }
+
         List<MultimediaDevice> ListMultimedia { get; set; }
+
         enumRentPriceRange RentPriceRange { get; set; }
+
+        decimal RentPricePerHour { get; set; }
 
         Location Location { get; set; }
 
-        //public Floor{get;set;}
+        int Floor {get;set;}
+
 
 
         /*-	roomId;

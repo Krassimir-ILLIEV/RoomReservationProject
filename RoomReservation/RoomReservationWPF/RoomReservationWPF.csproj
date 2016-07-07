@@ -54,12 +54,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Common\enumCapacityRange.cs" />
+    <Compile Include="Common\enumEmployeePriority.cs" />
     <Compile Include="Common\enumRentPriceRange.cs" />
+    <Compile Include="Contracts\IRegularEmployee.cs" />
+    <Compile Include="Contracts\IRequest.cs" />
     <Compile Include="Contracts\IRoom.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Models\Building.cs" />
     <Compile Include="Models\Coordinates.cs" />
     <Compile Include="Common\enumRoomTypes.cs" />
+    <Compile Include="Models\Intern.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ModelsTest.cs" />
     <Compile Include="Models\MultimediaDevice.cs" />
