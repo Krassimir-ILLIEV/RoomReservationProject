@@ -2,7 +2,7 @@
 {
     using System;
     using System.Text;
-    using Common;
+    using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
     using System.Runtime.Serialization;
     
@@ -40,7 +40,7 @@
             {
                 return this.internshipPeriodInMonths;
             }
-            set
+            private set
             {
                 if(value < 0 || value > 24)
                 {
