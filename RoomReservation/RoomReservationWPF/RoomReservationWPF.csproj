@@ -67,6 +67,7 @@
     <Compile Include="Models\Coordinates.cs" />
     <Compile Include="Common\enumRoomTypes.cs" />
     <Compile Include="Models\DepartmentManager.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Intern.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Manager.cs" />
