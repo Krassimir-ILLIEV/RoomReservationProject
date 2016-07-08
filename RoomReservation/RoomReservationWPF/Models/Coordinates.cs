@@ -1,35 +1,22 @@
-﻿namespace RoomReservation.Models
+﻿using System;
+
+namespace RoomReservation.Models
 {
-    public struct Coordinates
-    {
-        private int x;
-        private int y;
-        //private static readonly int[] O = { 0, 0 };
-
-        public Coordinates(int xCoordinage, int yCoordinate)
-            : this()
+        public class Coordinates
         {
-            this.X = xCoordinage;
-            this.Y = yCoordinate;
-        }
+            private double latitude;
+            private double longitude;
+            
+            public double Latitude { get; private set; }
+            public double Longitude { get; private set; }
 
-        public int X
-        {
-            get { return this.x; }
-            set
+            public Coordinates(double latitude, double longitude)
             {
-                this.x = value;
+                this.Latitude = latitude;
+                this.Longitude = longitude;
             }
-        }
 
-        public int Y
-        {
-            get { return this.y; }
-            set
-            {
 
-                this.y = value;
-            }
-        }
+        //I am not sure how GeoCoordinate class works. Somebody can implement it
     }
 }

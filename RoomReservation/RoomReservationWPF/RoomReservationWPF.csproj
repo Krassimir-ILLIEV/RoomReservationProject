@@ -53,6 +53,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\enumBuildingLocation.cs" />
+    <Compile Include="Common\enumBuildingType.cs" />
     <Compile Include="Common\enumCapacityRange.cs" />
     <Compile Include="Common\enumEmployeePriority.cs" />
     <Compile Include="Common\enumRentPriceRange.cs" />
