@@ -29,6 +29,7 @@ namespace RoomReservation.Models
         public List<int> GetListOfRecommendedRooms(Request request)   //roomID can be a class on its own
         {
             //roomSchedule_test;
+
             return null;
         }
 

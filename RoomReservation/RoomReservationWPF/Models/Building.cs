@@ -8,42 +8,44 @@ namespace RoomReservation.Models
 {
     class Building
     {
+        //TODO - Create the enumerations in folder "Common"
+
         private int buildingID;
-        private enumBuildingTypes buildingType;
-        private enumBuildingLocation buildingLocation;
+        //private enumBuildingTypes buildingType;
+        //private enumBuildingLocation buildingLocation;
         private int capacity;
         private Coordinates coordianates;
 
-        public enumBuildingTypes BuildingType
-        {
-            get
-            {
-                return this.buildingType;
-            }
+        //public enumBuildingTypes BuildingType
+        //{
+        //    get
+        //    {
+        //        return this.buildingType;
+        //    }
 
-            set
-            {
-                this.buildingType = value;
-            }
-        }
+        //    set
+        //    {
+        //        this.buildingType = value;
+        //    }
+        //}
 
-        public enumBuildingLocation BuildingLocation
-        {
-            get
-            {
-                return this.buildingLocation;
-            }
+        //public enumBuildingLocation BuildingLocation
+        //{
+        //    get
+        //    {
+        //        return this.buildingLocation;
+        //    }
 
-            set
-            {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("Location must be set!");
-                }
+        //    set
+        //    {
+        //        if (value == null)
+        //        {
+        //            throw new ArgumentNullException("Location must be set!");
+        //        }
 
-                this.buildingLocation = value;
-            }
-        }
+        //        this.buildingLocation = value;
+        //    }
+        //}
 
         public int Capacity
         {
