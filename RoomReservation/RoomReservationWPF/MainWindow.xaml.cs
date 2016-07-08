@@ -31,15 +31,40 @@ namespace RoomReservationWPF
 
             
         }
+        
+        private void bookTab_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void registerTab_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void createRoomTab_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void createBuildingTab_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void createEventTab_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            tbSettingText.Text = "Print stuff.";
+
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            this.Close();
+
         }
     }
 }
