@@ -53,6 +53,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common\enumBuildingLocation.cs" />
+    <Compile Include="Common\enumBuildingType.cs" />
     <Compile Include="Common\enumCapacityRange.cs" />
     <Compile Include="Common\enumEmployeePriority.cs" />
     <Compile Include="Common\enumRentPriceRange.cs" />
@@ -61,10 +63,16 @@
     <Compile Include="Contracts\IRoom.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Models\Building.cs" />
+    <Compile Include="Models\CEO.cs" />
+    <Compile Include="Models\CFO.cs" />
+    <Compile Include="Models\CIO.cs" />
     <Compile Include="Models\Coordinates.cs" />
     <Compile Include="Common\enumRoomTypes.cs" />
+    <Compile Include="Models\DepartmentManager.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Intern.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Manager.cs" />
     <Compile Include="Models\ModelsTest.cs" />
     <Compile Include="Models\MultimediaDevice.cs" />
     <Compile Include="Models\OrganizedEvent.cs" />
@@ -74,6 +82,7 @@
     <Compile Include="Models\RoomManager.cs" />
     <Compile Include="Models\Scheduler_deprecated.cs" />
     <Compile Include="Models\TimeSlot.cs" />
+    <Compile Include="Models\UnitManager.cs" />
     <Compile Include="View\TestView.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

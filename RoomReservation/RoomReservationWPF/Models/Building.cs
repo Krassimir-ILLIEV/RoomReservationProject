@@ -1,8 +1,10 @@
 ﻿using System;
+using RoomReservationWPF.Common;
 
 namespace RoomReservation.Models
 {
-    class Building
+ 
+    class Building 
     {
         private int buildingID;
         private enumBuildingTypes buildingType;
@@ -64,24 +66,24 @@ namespace RoomReservation.Models
         public override string ToString()
         {
             return string.Format("Building Id: {0}{1} Location: {2}{3} Type: {4}{5} Capacity: {6}{7} Floors: {8}{9} Coordinates: {10}{11}",
-            this.buildingID, Environment.NewLine,
-            this.buildingLocation, Environment.NewLine,
+            this.buildingID, Environment.NewLine, 
+            this.buildingLocation, Environment.NewLine, 
             this.buildingType, Environment.NewLine,
-            this.capacity, Environment.NewLine,
+            this.capacity, Environment.NewLine, 
             this.floors, Environment.NewLine,
             this.coordianates, Environment.NewLine);
         }
 
-
+        
         public Building()
         {
-
+            
         }
 
 
-        public Building(int buildingID,
-        enumBuildingLocation buildingLocation,
-        enumBuildingTypes buildingType,
+        public Building(int buildingID, 
+        enumBuildingLocation buildingLocation, 
+        enumBuildingTypes buildingType, 
         int capacity, int floors,
         Coordinates coordinates)
         {
@@ -92,7 +94,7 @@ namespace RoomReservation.Models
             this.floors = Floors;
             this.coordianates = coordinates;
         }
-
+            
 
     }
 }

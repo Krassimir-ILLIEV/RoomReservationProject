@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RoomReservationWPF.Models
 {
-    class Location
+    public class Location
     {
     }
 }
