@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RoomReservation.Models
 {
@@ -12,7 +8,16 @@ namespace RoomReservation.Models
         private enumBuildingTypes buildingType;
         private enumBuildingLocation buildingLocation;
         private int capacity;
+        private int floors;
         private Coordinates coordianates;
+
+        public int BuildingID
+        {
+            get
+            {
+                return this.buildingID;
+            }
+        }
 
         public enumBuildingTypes BuildingType
         {
@@ -36,11 +41,6 @@ namespace RoomReservation.Models
 
             set
             {
-                if (value == null)
-                {
-                    throw new ArgumentNullException("Location must be set!");
-                }
-
                 this.buildingLocation = value;
             }
         }
@@ -53,15 +53,46 @@ namespace RoomReservation.Models
             }
         }
 
-        /*public Building(enumBuildingTypes buildingType,
+        public int Floors
+        {
+            get
+            {
+                return this.floors;
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Building Id: {0}{1} Location: {2}{3} Type: {4}{5} Capacity: {6}{7} Floors: {8}{9} Coordinates: {10}{11}",
+            this.buildingID, Environment.NewLine,
+            this.buildingLocation, Environment.NewLine,
+            this.buildingType, Environment.NewLine,
+            this.capacity, Environment.NewLine,
+            this.floors, Environment.NewLine,
+            this.coordianates, Environment.NewLine);
+        }
+
+
+        public Building()
+        {
+
+        }
+
+
+        public Building(int buildingID,
         enumBuildingLocation buildingLocation,
-        int capacity,
+        enumBuildingTypes buildingType,
+        int capacity, int floors,
         Coordinates coordinates)
         {
-            this.buildingType = BuildingType;
+            this.buildingID = BuildingID;
             this.buildingLocation = BuildingLocation;
+            this.buildingType = BuildingType;
             this.capacity = Capacity;
-            */
+            this.floors = Floors;
+            this.coordianates = coordinates;
+        }
+
 
     }
 }
