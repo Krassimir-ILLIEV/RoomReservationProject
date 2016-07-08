@@ -1,30 +1,32 @@
-﻿namespace RoomReservationWPF.Models
+﻿namespace RoomReservationWPF.Models.Employees
 {
     using System;
     using System.Runtime.Serialization;
     using System.Text;
+
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
 
     [Serializable]
-    public class CFO : DepartmentManager, IRegularEmployee, ISerializable
+    public class CIO : DepartmentManager, IRegularEmployee, ISerializable
     {
-        public CFO() : base()
+        public CIO() : base()
         {
             // default
         }
 
-        public CFO(string name, string title, Location location, int yearsOfExperience, string unit, string department)
+        public CIO(string name, string title, Location location, int yearsOfExperience, string unit, string department)
             : base(name, title, location, yearsOfExperience, unit, department)
         {
         }
 
-        public CFO(SerializationInfo info, StreamingContext context)
+        public CIO(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
 
         // additional property
+
         public override EnumEmployeePriority Priority
         {
             get

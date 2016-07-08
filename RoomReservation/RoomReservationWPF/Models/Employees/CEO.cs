@@ -1,4 +1,4 @@
-﻿namespace RoomReservationWPF.Models
+﻿namespace RoomReservationWPF.Models.Employees
 {
     using System;
     using System.Runtime.Serialization;
@@ -25,7 +25,8 @@
         {
         }
 
-        // additional property ??
+        // additional property 
+
         public override EnumEmployeePriority Priority
         {
             get

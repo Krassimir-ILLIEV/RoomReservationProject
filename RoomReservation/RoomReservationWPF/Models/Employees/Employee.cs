@@ -1,4 +1,4 @@
-﻿namespace RoomReservationWPF.Models
+﻿namespace RoomReservationWPF.Models.Employees
 {
     using System;
     using System.Linq;
