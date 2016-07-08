@@ -12,27 +12,28 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*"/>
-                    <ColumnDefinition Width="540*"/>
-                    <ColumnDefinition Width="79*"/>
-                    <ColumnDefinition Width="274*"/>
+                    <ColumnDefinition Width="109*"/>
+                    <ColumnDefinition Width="427*"/>
+                    <ColumnDefinition Width="78*"/>
+                    <ColumnDefinition Width="272*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="searchBtn" Content="Search" Grid.Column="3" HorizontalAlignment="Left" Margin="147.8,357.8,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Row="1" Height="20"/>
+                <Button x:Name="searchBtn" Content="Search" Grid.Column="4" HorizontalAlignment="Left" Margin="148,358,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Row="1" Height="20"/>
 
-                <Label Content="Type" HorizontalAlignment="Left" Height="37" Margin="22,85,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
-                <Label Content="Capacity" HorizontalAlignment="Left" Height="37" Margin="22,53,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
-                <Label Content="Price" HorizontalAlignment="Left" Height="37" Margin="22,122,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
-                <Label Content="Time" HorizontalAlignment="Left" Height="37" Margin="22,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
-                <Label Content="Location" HorizontalAlignment="Left" Height="37" Margin="22,206,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
+                <Label Content="Type" HorizontalAlignment="Left" Height="37" Margin="22,85,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Content="Capacity" HorizontalAlignment="Left" Height="37" Margin="22,53,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Content="Price" HorizontalAlignment="Left" Height="37" Margin="22,122,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Content="Time" HorizontalAlignment="Left" Height="37" Margin="22,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1" Grid.ColumnSpan="2"/>
+                <Label Content="Location" HorizontalAlignment="Left" Height="37" Margin="22,206,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1" Grid.ColumnSpan="2"/>
 
-                <ComboBox x:Name="CapacityRangeBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="144,58,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
-                <ComboBox x:Name="TypeBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="144,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.15,0.227"/>
-                <ComboBox x:Name="PriceRangeBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="144,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.104,0"/>
-                <ComboBox x:Name="TimeRangeBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="144,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
-                <ComboBox x:Name="LocationBox" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="144,206,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
-                <Label Content="Room Property" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="22,10,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.303,-0.904"/>
-                <Label Content="Value" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="144,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-                <Label Content="Priority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="310,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-                <ComboBox x:Name="capacityPriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="310,58,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="CapacityRangeBox" HorizontalAlignment="Left" Margin="35,58,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                <ComboBox x:Name="TypeBox" HorizontalAlignment="Left" Margin="35,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.15,0.227" Grid.Column="2"/>
+                <ComboBox x:Name="PriceRangeBox" HorizontalAlignment="Left" Margin="35,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.104,0" Grid.Column="2"/>
+                <ComboBox x:Name="TimeRangeBox" HorizontalAlignment="Left" Margin="35,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                <ComboBox x:Name="LocationBox" HorizontalAlignment="Left" Margin="35,206,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2"/>
+                <Label Content="Room Property" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="22,10,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.303,-0.904"/>
+                <Label Content="Value" HorizontalAlignment="Left" Margin="35,10,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="2"/>
+                <Label Content="Priority" HorizontalAlignment="Left" Margin="201,10,0,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="2"/>
+                <ComboBox x:Name="capacityPriority" HorizontalAlignment="Left" Margin="201,58,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -41,7 +42,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ComboBox x:Name="typePriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="310,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="typePriority" HorizontalAlignment="Left" Margin="201,90,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -50,7 +51,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ComboBox x:Name="pricePriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="310,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="pricePriority" HorizontalAlignment="Left" Margin="201,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -59,7 +60,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ComboBox x:Name="timePriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="310,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="timePriority" HorizontalAlignment="Left" Margin="201,164,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -68,7 +69,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ComboBox x:Name="locationPriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="310,206,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="locationPriority" HorizontalAlignment="Left" Margin="201,206,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="2">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>

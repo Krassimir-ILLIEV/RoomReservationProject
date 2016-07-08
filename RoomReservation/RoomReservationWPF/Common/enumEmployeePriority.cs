@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RoomReservationWPF.Common
+﻿namespace RoomReservationWPF.Common
 {
-    public enum enumEmployeePriority
+    public enum EnumEmployeePriority
     {
-        VeryLow= 0,
+        VeryLow = 0,
         Low = 1,
         Medium = 2,
         High = 3,

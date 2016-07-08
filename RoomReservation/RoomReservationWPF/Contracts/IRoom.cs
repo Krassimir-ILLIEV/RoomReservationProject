@@ -1,38 +1,38 @@
-﻿using RoomReservation.Models;
-using RoomReservationWPF.Common;
-using RoomReservationWPF.Models;
-using System.Collections.Generic;
-namespace RoomReservationWPF.Contracts
+﻿namespace RoomReservationWPF.Contracts
 {
-    interface IRoom
-    {
-        enumCapacityRange CapacityRange {get; set;}
-        //add corresponding fields
+    using System.Collections.Generic;
 
-        enumRoomTypes RoomType { get; set; }
+    using RoomReservation.Models;
+    using RoomReservationWPF.Common;
+    using RoomReservationWPF.Models;
+
+    internal interface IRoom
+    {
+        EnumCapacityRange CapacityRange { get; set; }
+
+        // add corresponding fields
+        EnumRoomTypes RoomType { get; set; }
 
         int Capacity { get; set; }
 
         List<MultimediaDevice> ListMultimedia { get; set; }
 
-        enumRentPriceRange RentPriceRange { get; set; }
+        EnumRentPriceRange RentPriceRange { get; set; }
 
         decimal RentPricePerHour { get; set; }
 
         Location Location { get; set; }
 
-        int Floor {get;set;}
+        int Floor { get; set; }
 
-
-
-        /*-	roomId;
--	roomType (conference, cinema,etc, type Enum);
--	capacity (in terms of people);
--	list(MultimediaDevice) //some inheritance here, perhaps //PATTERN COMPOSITE
--	rentPerHour //rent that depends on time of day so that analysis and optimizations could be made;
--	rentPriceCategory (derived from rentPerHour, e.g. price category 1,2,3,4 having some ranges);
--	location (type Building);
--	floor;
-         */
+        /* - roomId;
+- roomType (conference, cinema,etc, type Enum);
+- capacity (in terms of people);
+- list(MultimediaDevice) //some inheritance here, perhaps //PATTERN COMPOSITE
+- rentPerHour //rent that depends on time of day so that analysis and optimizations could be made;
+- rentPriceCategory (derived from rentPerHour, e.g. price category 1,2,3,4 having some ranges);
+- location (type Building);
+- floor;
+        */
     }
 }

@@ -2,17 +2,18 @@
 {
     using System;
     using System.Linq;
+    using System.Runtime.Serialization;
     using System.Text;
+
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
-    using System.Runtime.Serialization;
 
     [Serializable]
     public class Employee : RegularEmployee, IRegularEmployee, ISerializable
     {
         public Employee() : base()
         {
-            //default
+            // default
         }
 
         public Employee(string name, string title, Location location, string team)
@@ -28,20 +29,20 @@
         }
 
         public string Team { get; private set; }
-        //or another property?
+
+        // or another property?
+        public override EnumEmployeePriority Priority
+        {
+            get
+            {
+                return EnumEmployeePriority.Low;
+            }
+        }
 
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
             info.AddValue("Team", this.Team, typeof(string));
-        }
-       
-        public override enumEmployeePriority Priority
-        {
-            get
-            {
-                return enumEmployeePriority.Low;
-            }
         }
 
         public override string ToString()

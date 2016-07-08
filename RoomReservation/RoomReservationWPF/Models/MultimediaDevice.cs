@@ -1,12 +1,8 @@
 ﻿namespace RoomReservation.Models
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    class MultimediaDevice
+    public class MultimediaDevice
     {
         private string model;
         private int brightness;
@@ -18,9 +14,9 @@
 
         public MultimediaDevice(string model, int brightness, int suportedScreen)
         {
-            this.model = Model;
-            this.brightness = Brightness;
-            this.suportedScreenSize = SuportedScreenSize;
+            this.Model = model;
+            this.Brightness = brightness;
+            this.SuportedScreenSize = suportedScreenSize;
         }
 
         public string Model
@@ -29,6 +25,7 @@
             {
                 return this.model;
             }
+
             set
             {
                 this.model = value;
@@ -41,12 +38,14 @@
             {
                 return this.brightness;
             }
+
             set
             {
                 if (value < 0)
                 {
                     throw new ArgumentException("Brightness must be greater than 0");
                 }
+
                 this.brightness = value;
             }
         }
@@ -57,12 +56,14 @@
             {
                 return this.suportedScreenSize;
             }
+
             set
             {
                 if (value < 40 || value > 500)
                 {
                     throw new ArgumentException("Suported screen size should be between 40 and 500 inches");
                 }
+
                 this.suportedScreenSize = value;
             }
         }

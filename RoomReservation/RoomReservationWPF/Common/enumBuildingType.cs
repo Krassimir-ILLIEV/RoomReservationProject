@@ -1,6 +1,6 @@
 ﻿namespace RoomReservation.Models
 {
-    public enum enumBuildingTypes
+    public enum EnumBuildingTypes
     {
         ConferenceBuilding,
         PartyBuilding,

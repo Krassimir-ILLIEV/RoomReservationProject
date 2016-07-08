@@ -1,34 +1,34 @@
 ﻿namespace RoomReservation.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
     using RoomReservationWPF.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    class Room : IRoom
+    internal class Room : IRoom
     {
         private static int roomIdGenerator = 1;
         private readonly int roomID;
         private int capacity;
         private int floor;
         private List<MultimediaDevice> listMultimedia;
-        private enumRoomTypes roomType;
-        private enumCapacityRange capacityRange;
-        private enumRentPriceRange rentPriceRange;
+        private EnumRoomTypes roomType;
+        private EnumCapacityRange capacityRange;
+        private EnumRentPriceRange rentPriceRange;
         private decimal rentPricePerHour;
         private Location location;
 
-        public Room()
-        {
-        }
-
-        public Room(int capacity, int floor, List<MultimediaDevice> listMultimedia,
-        enumRoomTypes roomType, enumCapacityRange capacityRnage, enumRentPriceRange rentPriceRnage,
-        decimal rentPricePerHour, Location location)
+        public Room(
+            int capacity,
+            int floor,
+            List<MultimediaDevice> listMultimedia,
+        EnumRoomTypes roomType,
+        EnumCapacityRange capacityRnage,
+        EnumRentPriceRange rentPriceRnage,
+        decimal rentPricePerHour,
+        Location location)
         {
             this.roomID = RoomId;
             this.capacity = Capacity;
@@ -43,6 +43,10 @@
             roomIdGenerator++;
         }
 
+        public Room()
+        {
+        }
+
         public int RoomId
         {
             get
@@ -51,7 +55,7 @@
             }
         }
 
-        public enumCapacityRange CapacityRange
+        public EnumCapacityRange CapacityRange
         {
             get
             {
@@ -64,7 +68,7 @@
             }
         }
 
-        public enumRoomTypes RoomType
+        public EnumRoomTypes RoomType
         {
             get
             {
@@ -98,6 +102,7 @@
                 this.capacity = value;
             }
         }
+
         public List<MultimediaDevice> ListMultimedia
         {
             get
@@ -116,12 +121,13 @@
             }
         }
 
-        public enumRentPriceRange RentPriceRange
+        public EnumRentPriceRange RentPriceRange
         {
             get
             {
                 return this.rentPriceRange;
             }
+
             set
             {
                 this.rentPriceRange = value;
@@ -179,20 +185,17 @@
 
         public override string ToString()
         {
-            return string.Format("Room Id: {0}{1}Capacity: {2}{3}Floor: {4}{5}",
-            this.roomID, Environment.NewLine, this.capacity, Environment.NewLine, this.floor, Environment.NewLine);
+            return string.Format("Room Id: {0}{1}Capacity: {2}{3}Floor: {4}{5}", this.roomID, Environment.NewLine, this.capacity, Environment.NewLine, this.floor, Environment.NewLine);
         }
-        /*roomId;
--	roomType (conference, cinema,etc, type Enum);
--	capacity (in terms of people);
--	list(MultimediaDevice) //some inheritance here, perhaps //PATTERN COMPOSITE
--	rentPerHour //rent that depends on time of day so that analysis and optimizations could be made;
--	rentPriceCategory (derived from rentPerHour, e.g. price category 1,2,3,4 having some ranges);
--	location (type Building);
--	floor;
--	ToString(); //prints all information about a room.
+        /* roomId;
+- roomType (conference, cinema,etc, type Enum);
+- capacity (in terms of people);
+- list(MultimediaDevice) //some inheritance here, perhaps //PATTERN COMPOSITE
+- rentPerHour //rent that depends on time of day so that analysis and optimizations could be made;
+- rentPriceCategory (derived from rentPerHour, e.g. price category 1,2,3,4 having some ranges);
+- location (type Building);
+- floor;
+- ToString(); //prints all information about a room.
 */
     }
-
-
 }

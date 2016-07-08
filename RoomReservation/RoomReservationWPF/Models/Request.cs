@@ -1,35 +1,37 @@
-﻿using RoomReservationWPF.Models;
-namespace RoomReservation.Models
+﻿namespace RoomReservation.Models
 {
-    using RoomReservationWPF.Common;
-    using RoomReservationWPF.Contracts;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-    class Request : IRoom
+
+    using RoomReservationWPF.Common;
+    using RoomReservationWPF.Contracts;
+    using RoomReservationWPF.Models;
+
+    public class Request : IRoom
     {
         private int capacity;
-        private enumCapacityRange capacityRange;
+        private EnumCapacityRange capacityRange;
         private int floor;
         private List<MultimediaDevice> listMultimedia;
         private Location location;
         private decimal rentPricePerHour;
-        private enumRentPriceRange rentPriceRange;
-        private enumRoomTypes roomType;
+        private EnumRentPriceRange rentPriceRange;
+        private EnumRoomTypes roomType;
 
-        public Request( 
+        public Request(
             int capacity,
-            enumCapacityRange capacityRange,
+            EnumCapacityRange capacityRange,
             int floor,
             List<MultimediaDevice> listMultimedia,
             Location location,
-            decimal RentPricePerHour,
-            enumRentPriceRange rentPriceRange,
-            enumRoomTypes roomType)
+            decimal rentPricePerHour,
+            EnumRentPriceRange rentPriceRange,
+            EnumRoomTypes roomType)
         {
-            //Room modelDesiredRoom = new Room(roomType, capacity, listMultimedia, rentPriceRange, location);
+            // Room modelDesiredRoom = new Room(roomType, capacity, listMultimedia, rentPriceRange, location);
             this.Capacity = capacity;
             this.CapacityRange = capacityRange;
             this.Floor = floor;
@@ -58,7 +60,7 @@ namespace RoomReservation.Models
             }
         }
 
-        public enumCapacityRange CapacityRange
+        public EnumCapacityRange CapacityRange
         {
             get
             {
@@ -144,7 +146,7 @@ namespace RoomReservation.Models
             }
         }
 
-        public enumRentPriceRange RentPriceRange
+        public EnumRentPriceRange RentPriceRange
         {
             get
             {
@@ -158,7 +160,7 @@ namespace RoomReservation.Models
             }
         }
 
-        public enumRoomTypes RoomType
+        public EnumRoomTypes RoomType
         {
             get
             {
@@ -167,7 +169,7 @@ namespace RoomReservation.Models
 
             set
             {
-                //impelement validation if needed
+                // impelement validation if needed
                 this.roomType = value;
             }
         }

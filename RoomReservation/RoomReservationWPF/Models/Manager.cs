@@ -13,26 +13,26 @@
 
         public Manager() : base()
         {
-            //default
+            // default
         }
 
         public Manager(string name, string title, Location location, int yearsOfExperience)
-            :base(name, title, location)
+            : base(name, title, location)
         {
             this.YearsOfExperience = yearsOfExperience;
         }
 
         public Manager(SerializationInfo info, StreamingContext context)
-            :base(info, context)
+            : base(info, context)
         {
             this.YearsOfExperience = (int)info.GetValue("YearsExperience", typeof(int));
         }
 
-        public override enumEmployeePriority Priority
+        public override EnumEmployeePriority Priority
         {
             get
             {
-                return enumEmployeePriority.Medium;
+                return EnumEmployeePriority.Medium;
             }
         }
 
@@ -42,12 +42,14 @@
             {
                 return this.yearsOfExperience;
             }
+
             private set
             {
-                if(value < 0)
+                if (value < 0)
                 {
                     throw new ArgumentException("The experience of a manager should be a positive number.");
                 }
+
                 this.yearsOfExperience = value;
             }
         }

@@ -1,33 +1,33 @@
 ﻿namespace RoomReservationWPF.Models
 {
     using System;
-    using System.Text;
     using System.Runtime.Serialization;
-    using RoomReservationWPF.Contracts;
+    using System.Text;
+
     using RoomReservationWPF.Common;
+    using RoomReservationWPF.Contracts;
 
     [Serializable]
     public class UnitManager : Manager, IRegularEmployee, ISerializable
     {
         public UnitManager() : base()
         {
-            //default
+            // default
         }
 
         public UnitManager(string name, string title, Location location, int yearsOfExperience, string unit)
-            :base(name, title, location, yearsOfExperience)
+            : base(name, title, location, yearsOfExperience)
         {
             this.Unit = unit;
         }
 
         public UnitManager(SerializationInfo info, StreamingContext context)
-            :base(info, context)
+            : base(info, context)
         {
             this.Unit = (string)info.GetValue("Unit", typeof(string));
         }
 
-        //prirority from manager- medium
-
+        // prirority from manager- medium
         public string Unit { get; private set; }
 
         public override void GetObjectData(SerializationInfo info, StreamingContext context)

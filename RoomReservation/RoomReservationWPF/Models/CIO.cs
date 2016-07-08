@@ -1,17 +1,18 @@
 ﻿namespace RoomReservationWPF.Models
 {
     using System;
-    using System.Text;
     using System.Runtime.Serialization;
-    using RoomReservationWPF.Contracts;
+    using System.Text;
+
     using RoomReservationWPF.Common;
+    using RoomReservationWPF.Contracts;
 
     [Serializable]
     public class CIO : DepartmentManager, IRegularEmployee, ISerializable
     {
         public CIO() : base()
         {
-            //default
+            // default
         }
 
         public CIO(string name, string title, Location location, int yearsOfExperience, string unit, string department)
@@ -24,13 +25,12 @@
         {
         }
 
-        //additional property
-
-        public override enumEmployeePriority Priority
+        // additional property
+        public override EnumEmployeePriority Priority
         {
             get
             {
-                return enumEmployeePriority.VeryHigh;
+                return EnumEmployeePriority.VeryHigh;
             }
         }
 

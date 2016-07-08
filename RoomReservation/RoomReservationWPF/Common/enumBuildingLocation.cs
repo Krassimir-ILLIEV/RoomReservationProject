@@ -1,6 +1,6 @@
 ﻿namespace RoomReservation.Models
 {
-    public enum enumBuildingLocation
+    public enum EnumBuildingLocation
     {
         Sofia,
         Plovdiv,

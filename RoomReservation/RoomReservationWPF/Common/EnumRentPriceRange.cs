@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RoomReservationWPF.Common
+﻿namespace RoomReservationWPF.Common
 {
-    public enum enumRentPriceRange
+    public enum EnumRentPriceRange
     {
         Between0and200,
         Between201and500
     }
-
 }

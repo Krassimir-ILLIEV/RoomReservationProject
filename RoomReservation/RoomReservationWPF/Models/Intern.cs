@@ -1,11 +1,12 @@
 ﻿namespace RoomReservationWPF.Models
 {
     using System;
+    using System.Runtime.Serialization;
     using System.Text;
+
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
-    using System.Runtime.Serialization;
-    
+
     [Serializable]
     public class Intern : RegularEmployee, IRegularEmployee, ISerializable
     {
@@ -13,25 +14,27 @@
 
         public Intern() : base()
         {
-            //default
+            // default
         }
 
         public Intern(string name, string title, Location location, int internshipPeriod)
-            :base(name, title, location)
+            : base(name, title, location)
         {
             this.InternshipPeriodInMonths = internshipPeriod;
         }
 
         public Intern(SerializationInfo info, StreamingContext context)
-            :base(info, context)
+            : base(info, context)
         {
             this.InternshipPeriodInMonths = (int)info.GetValue("InternshipPeriod", typeof(int));
         }
 
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        public override EnumEmployeePriority Priority
         {
-            base.GetObjectData(info, context);
-            info.AddValue("InternshipPeriod", this.InternshipPeriodInMonths, typeof(int));
+            get
+            {
+                return EnumEmployeePriority.VeryLow;
+            }
         }
 
         public int InternshipPeriodInMonths
@@ -40,22 +43,22 @@
             {
                 return this.internshipPeriodInMonths;
             }
+
             private set
             {
-                if(value < 0 || value > 24)
+                if (value < 0 || value > 24)
                 {
                     throw new ArgumentException("The internship period should be between 0 and 24 months.");
                 }
+
                 this.internshipPeriodInMonths = value;
             }
         }
 
-        public override enumEmployeePriority Priority
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            get
-            {
-                return enumEmployeePriority.VeryLow;
-            }
+            base.GetObjectData(info, context);
+            info.AddValue("InternshipPeriod", this.InternshipPeriodInMonths, typeof(int));
         }
 
         public override string ToString()

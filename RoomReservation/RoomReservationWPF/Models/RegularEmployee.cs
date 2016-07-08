@@ -1,24 +1,20 @@
-﻿using RoomReservationWPF.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RoomReservationWPF.Common;
-using System.Runtime.Serialization;
-
-namespace RoomReservationWPF.Models
+﻿namespace RoomReservationWPF.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Runtime.Serialization;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using RoomReservationWPF.Common;
+    using RoomReservationWPF.Contracts;
+
     [Serializable]
     public abstract class RegularEmployee : IRegularEmployee, ISerializable
     {
         private static int employeeIdGenerator = 1;
         private readonly int employeeID;
-
-        public RegularEmployee()
-        {
-            //default constructor 
-        }
 
         public RegularEmployee(string name, string title, Location location)
         {
@@ -32,16 +28,14 @@ namespace RoomReservationWPF.Models
         {
             this.Name = (string)info.GetValue("EmployeeName", typeof(string));
             this.Title = (string)info.GetValue("EmployeeTitle", typeof(string));
-            //Id
-            //location
+
+            // Id
+            // location
         }
 
-        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
+        public RegularEmployee()
         {
-            info.AddValue("EmployeeName", this.Name, typeof(string));
-            info.AddValue("EmployeeTitle", this.Title, typeof(string));
-            //Id
-            //location
+            // default constructor 
         }
 
         public int EmployeeID
@@ -51,14 +45,23 @@ namespace RoomReservationWPF.Models
                 return this.employeeID;
             }
         }
-     
+
         public string Name { get; set; }
 
-        public abstract enumEmployeePriority Priority { get; }
+        public abstract EnumEmployeePriority Priority { get; }
 
         public string Title { get; private set; }
 
-        public Location EmployeeLocation {  get; private set; }
+        public Location EmployeeLocation { get; private set; }
+
+        public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("EmployeeName", this.Name, typeof(string));
+            info.AddValue("EmployeeTitle", this.Title, typeof(string));
+
+            // Id
+            // location
+        }
 
         public override string ToString()
         {
@@ -68,7 +71,8 @@ namespace RoomReservationWPF.Models
             builder.AppendLine(string.Format("Title: {0}", this.Title));
             builder.AppendLine(string.Format("ID: {0}", this.EmployeeID));
             builder.AppendLine(string.Format("Priority: {0}", this.Priority));
-            //location
+
+            // location
             return builder.ToString();
         }
     }

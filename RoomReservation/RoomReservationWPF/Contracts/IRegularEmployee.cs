@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using RoomReservationWPF.Common;
-using RoomReservationWPF.Models;
-
-namespace RoomReservationWPF.Contracts
+﻿namespace RoomReservationWPF.Contracts
 {
-    interface IRegularEmployee: ISerializable
+    using System.Runtime.Serialization;
+
+    using RoomReservationWPF.Common;
+    using RoomReservationWPF.Models;
+
+    internal interface IRegularEmployee : ISerializable
     {
         int EmployeeID { get; }
+
         string Title { get; }
+
         string Name { get; }
-        enumEmployeePriority Priority { get; }
+
+        EnumEmployeePriority Priority { get; }
+
         Location EmployeeLocation { get; }
     }
 }

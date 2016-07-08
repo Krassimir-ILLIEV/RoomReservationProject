@@ -1,17 +1,18 @@
 ﻿namespace RoomReservationWPF.Models
 {
     using System;
-    using System.Text;
     using System.Runtime.Serialization;
-    using RoomReservationWPF.Contracts;
+    using System.Text;
+
     using RoomReservationWPF.Common;
+    using RoomReservationWPF.Contracts;
 
     [Serializable]
     public class DepartmentManager : UnitManager, IRegularEmployee, ISerializable
     {
         public DepartmentManager() : base()
         {
-            //default
+            // default
         }
 
         public DepartmentManager(string name, string title, Location location, int yearsOfExperience, string unit, string department)
@@ -26,11 +27,11 @@
             this.Department = (string)info.GetValue("Department", typeof(string));
         }
 
-        public override enumEmployeePriority Priority
+        public override EnumEmployeePriority Priority
         {
             get
             {
-                return enumEmployeePriority.High;
+                return EnumEmployeePriority.High;
             }
         }
 
@@ -51,4 +52,3 @@
         }
     }
 }
-

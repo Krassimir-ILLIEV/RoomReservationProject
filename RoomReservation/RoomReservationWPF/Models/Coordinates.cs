@@ -1,22 +1,20 @@
-﻿using System;
-
-namespace RoomReservation.Models
+﻿namespace RoomReservation.Models
 {
-        public class Coordinates
+    public class Coordinates
+    {
+        private double latitude;
+        private double longitude;
+
+        public Coordinates(double latitude, double longitude)
         {
-            private double latitude;
-            private double longitude;
-            
-            public double Latitude { get; private set; }
-            public double Longitude { get; private set; }
+            this.Latitude = latitude;
+            this.Longitude = longitude;
+        }
 
-            public Coordinates(double latitude, double longitude)
-            {
-                this.Latitude = latitude;
-                this.Longitude = longitude;
-            }
+        public double Latitude { get; private set; }
 
+        public double Longitude { get; private set; }
 
-        //I am not sure how GeoCoordinate class works. Somebody can implement it
+        // I am not sure how GeoCoordinate class works. Somebody can implement it
     }
 }

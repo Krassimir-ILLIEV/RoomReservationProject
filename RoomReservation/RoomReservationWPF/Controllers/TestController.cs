@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RoomReservation.Controllers
+﻿namespace RoomReservation.Controllers
 {
-    class TestController
+   public class TestController
     {
     }
 }
