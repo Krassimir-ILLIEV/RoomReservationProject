@@ -2,13 +2,19 @@
 {
     using System;
     using System.Collections.Generic;
-
+    using RoomReservationWPF.Exceptions;
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
     using RoomReservationWPF.Models;
 
     internal class Room : IRoom
     {
+        // Constants
+        private const int minCapacity = 0;
+        private const int maxCapacity = 500;
+        private const int minFloor = 0;
+        private const int maxFloor = 13;
+        
         private static int roomIdGenerator = 1;
         private readonly int roomID;
         private int capacity;
@@ -90,13 +96,13 @@
 
             set
             {
-                if (value < 0)
+                if (value < minCapacity)
                 {
-                    throw new ArgumentException("Capacity must be greater then 0");
+                    throw new RoomExceptions("Capacity must be equal or more then {0}" , minCapacity);
                 }
-                else if (value > 500)
+                else if (value > maxCapacity)
                 {
-                    throw new ArgumentException("Capacity must be less than 500");
+                    throw new RoomExceptions("Capacity must be less than {0}" , maxCapacity);
                 }
 
                 this.capacity = value;
@@ -114,7 +120,7 @@
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("List of multimedia divices must be set!");
+                    throw new RoomExceptions("List of multimedia divices must be set!");
                 }
 
                 this.listMultimedia = value;
@@ -156,9 +162,13 @@
 
             set
             {
-                if (value < 0)
+                if (value < minFloor)
                 {
-                    throw new ArgumentException("Floor must be greater then 0");
+                    throw new RoomExceptions("Floor must be greater then {0}", minFloor);
+                }
+                else if (value > maxFloor)
+                {
+                    throw new RoomExceptions("Floor must be smaller then {0}", maxFloor);
                 }
 
                 this.floor = value;
@@ -176,7 +186,7 @@
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("Location must be set!");
+                    throw new RoomExceptions("Location must be set!");
                 }
 
                 this.location = value;
