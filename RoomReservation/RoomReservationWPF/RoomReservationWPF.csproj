@@ -56,7 +56,6 @@
     <Compile Include="Common\enumCapacityRange.cs" />
     <Compile Include="Common\enumEmployeePriority.cs" />
     <Compile Include="Common\enumRentPriceRange.cs" />
-    <Compile Include="Contracts\IBuilding.cs" />
     <Compile Include="Contracts\IRegularEmployee.cs" />
     <Compile Include="Contracts\IRequest.cs" />
     <Compile Include="Contracts\IRoom.cs" />
