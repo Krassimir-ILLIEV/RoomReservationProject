@@ -62,6 +62,7 @@
     <Compile Include="Contracts\IRequest.cs" />
     <Compile Include="Contracts\IRoom.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Exceptions\Exceptions.cs" />
     <Compile Include="Models\Building.cs" />
     <Compile Include="Models\Employees\CEO.cs" />
     <Compile Include="Models\Employees\CFO.cs" />
