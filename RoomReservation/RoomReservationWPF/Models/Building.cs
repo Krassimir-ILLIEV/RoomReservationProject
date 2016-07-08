@@ -1,51 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RoomReservationWPF.Common;
 
 namespace RoomReservation.Models
 {
-    class Building
+ 
+    class Building 
     {
-        //TODO - Create the enumerations in folder "Common"
-
         private int buildingID;
-        //private enumBuildingTypes buildingType;
-        //private enumBuildingLocation buildingLocation;
+        private enumBuildingTypes buildingType;
+        private enumBuildingLocation buildingLocation;
         private int capacity;
+        private int floors;
         private Coordinates coordianates;
 
-        //public enumBuildingTypes BuildingType
-        //{
-        //    get
-        //    {
-        //        return this.buildingType;
-        //    }
+        public int BuildingID
+        {
+            get
+            {
+                return this.buildingID;
+            }
+        }
 
-        //    set
-        //    {
-        //        this.buildingType = value;
-        //    }
-        //}
+        public enumBuildingTypes BuildingType
+        {
+            get
+            {
+                return this.buildingType;
+            }
 
-        //public enumBuildingLocation BuildingLocation
-        //{
-        //    get
-        //    {
-        //        return this.buildingLocation;
-        //    }
+            set
+            {
+                this.buildingType = value;
+            }
+        }
 
-        //    set
-        //    {
-        //        if (value == null)
-        //        {
-        //            throw new ArgumentNullException("Location must be set!");
-        //        }
+        public enumBuildingLocation BuildingLocation
+        {
+            get
+            {
+                return this.buildingLocation;
+            }
 
-        //        this.buildingLocation = value;
-        //    }
-        //}
+            set
+            {
+                this.buildingLocation = value;
+            }
+        }
 
         public int Capacity
         {
@@ -55,15 +55,46 @@ namespace RoomReservation.Models
             }
         }
 
-        /*public Building(enumBuildingTypes buildingType,
-        enumBuildingLocation buildingLocation,
-        int capacity,
+        public int Floors
+        {
+            get
+            {
+                return this.floors;
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Building Id: {0}{1} Location: {2}{3} Type: {4}{5} Capacity: {6}{7} Floors: {8}{9} Coordinates: {10}{11}",
+            this.buildingID, Environment.NewLine, 
+            this.buildingLocation, Environment.NewLine, 
+            this.buildingType, Environment.NewLine,
+            this.capacity, Environment.NewLine, 
+            this.floors, Environment.NewLine,
+            this.coordianates, Environment.NewLine);
+        }
+
+        
+        public Building()
+        {
+            
+        }
+
+
+        public Building(int buildingID, 
+        enumBuildingLocation buildingLocation, 
+        enumBuildingTypes buildingType, 
+        int capacity, int floors,
         Coordinates coordinates)
         {
-            this.buildingType = BuildingType;
+            this.buildingID = BuildingID;
             this.buildingLocation = BuildingLocation;
+            this.buildingType = BuildingType;
             this.capacity = Capacity;
-            */
+            this.floors = Floors;
+            this.coordianates = coordinates;
+        }
+            
 
     }
 }
