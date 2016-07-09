@@ -31,7 +31,7 @@
         {
             get
             {
-                return EnumEmployeePriority.High;
+                return EnumEmployeePriority.VeryHigh;
             }
         }
 

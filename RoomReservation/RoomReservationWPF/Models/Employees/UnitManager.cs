@@ -27,7 +27,13 @@
             this.Unit = (string)info.GetValue("Unit", typeof(string));
         }
 
-        // prirority from manager- medium
+        public override EnumEmployeePriority Priority
+        {
+            get
+            {
+                return EnumEmployeePriority.High;
+            }
+        }
         public string Unit { get; private set; }
 
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
