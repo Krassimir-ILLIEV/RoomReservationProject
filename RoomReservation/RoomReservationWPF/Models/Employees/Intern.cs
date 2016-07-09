@@ -4,12 +4,15 @@
     using System.Runtime.Serialization;
     using System.Text;
 
+    using Exceptions;
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
 
     [Serializable]
     public class Intern : RegularEmployee, IRegularEmployee, ISerializable
     {
+        private const int minPeriod = 0;
+        private const int maxPeriod = 24;
         private int internshipPeriodInMonths;
 
         public Intern() : base()
@@ -48,7 +51,7 @@
             {
                 if (value < 0 || value > 24)
                 {
-                    throw new ArgumentException("The internship period should be between 0 and 24 months.");
+                    throw new DateExeptions("The internship period should be between {0} and {1} months.", minPeriod, maxPeriod);
                 }
 
                 this.internshipPeriodInMonths = value;

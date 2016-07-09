@@ -14,8 +14,8 @@
         public MainWindow()
         {
             InitializeComponent();
-
-            Room r1 = new Room();
+            
+            // Room r1 = new Room();
             Trace.WriteLine("-----");
         }
 

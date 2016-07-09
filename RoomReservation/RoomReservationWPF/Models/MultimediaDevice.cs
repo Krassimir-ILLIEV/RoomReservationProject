@@ -2,8 +2,14 @@
 {
     using System;
 
+    using RoomReservationWPF.Exceptions;
+
     public class MultimediaDevice
     {
+        private const int defaultBrightness = 0;
+        private const int minScreenSize = 40;
+        private const int maxScreenSize = 500;
+
         private string model;
         private int brightness;
         private int suportedScreenSize;
@@ -43,7 +49,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Brightness must be greater than 0");
+                    throw new MultimediaExceptions("Brightness must be greater than {0}", defaultBrightness);
                 }
 
                 this.brightness = value;
@@ -61,7 +67,7 @@
             {
                 if (value < 40 || value > 500)
                 {
-                    throw new ArgumentException("Suported screen size should be between 40 and 500 inches");
+                    throw new MultimediaExceptions("Suported screen size should be between {0} and {1} inches", minScreenSize, maxScreenSize);
                 }
 
                 this.suportedScreenSize = value;

@@ -3,8 +3,10 @@
     using System;
     using System.Runtime.Serialization;
     using System.Text;
+
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
+    using RoomReservationWPF.Exceptions;
 
     [Serializable]
     public class Manager : RegularEmployee, IRegularEmployee, ISerializable
@@ -47,7 +49,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("The experience of a manager should be a positive number.");
+                    throw new DateExeptions("The experience of a manager should be a positive number.");
                 }
 
                 this.yearsOfExperience = value;

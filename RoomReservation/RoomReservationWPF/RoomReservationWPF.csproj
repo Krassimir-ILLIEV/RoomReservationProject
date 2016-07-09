@@ -62,6 +62,8 @@
     <Compile Include="Contracts\IRequest.cs" />
     <Compile Include="Contracts\IRoom.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Exceptions\DateExeptions.cs" />
+    <Compile Include="Exceptions\MultimediaExceptions.cs" />
     <Compile Include="Exceptions\PricesException.cs" />
     <Compile Include="Exceptions\RoomExceptions.cs" />
     <Compile Include="Models\Building.cs" />
