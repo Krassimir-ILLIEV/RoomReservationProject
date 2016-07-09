@@ -21,7 +21,8 @@
             int buildingID,
         EnumBuildingLocation buildingLocation,
         EnumBuildingTypes buildingType,
-        int capacity, int floors,
+        int capacity,
+        int floors,
         Coordinates coordinates)
         {
             this.buildingID = BuildingID;
@@ -86,12 +87,18 @@
         {
             return string.Format(
                 "Building Id: {0}{1} Location: {2}{3} Type: {4}{5} Capacity: {6}{7} Floors: {8}{9} Coordinates: {10}{11}",
-                this.buildingID, Environment.NewLine,
-                this.buildingLocation, Environment.NewLine,
-                this.buildingType, Environment.NewLine,
-                this.capacity, Environment.NewLine,
-                this.floors, Environment.NewLine,
-                this.coordianates, Environment.NewLine);
+                this.buildingID,
+                Environment.NewLine,
+                this.buildingLocation,
+                Environment.NewLine,
+                this.buildingType,
+                Environment.NewLine,
+                this.capacity,
+                Environment.NewLine,
+                this.floors,
+                Environment.NewLine,
+                this.coordianates,
+                Environment.NewLine);
         }
     }
 }

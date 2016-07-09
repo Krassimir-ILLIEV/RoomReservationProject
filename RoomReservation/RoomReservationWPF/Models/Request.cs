@@ -14,8 +14,8 @@
     public class Request : IRoom
     {
         // Constants
-        private const int minCapacity = 0;
-        private const int minFloor = 0;
+        private const int MinCapacity = 0;
+        private const int MinFloor = 0;
 
         private int capacity;
         private EnumCapacityRange capacityRange;
@@ -58,7 +58,7 @@
             {
                 if (value < 0)
                 {
-                    throw new RoomExceptions("Capacity must be greater then {0}", minCapacity);
+                    throw new RoomExceptions("Capacity must be greater then {0}", MinCapacity);
                 }
 
                 this.capacity = value;
@@ -90,7 +90,7 @@
             {
                 if (value < 0)
                 {
-                    throw new RoomExceptions("Floor must be greater then {0}", minFloor);
+                    throw new RoomExceptions("Floor must be greater then {0}", MinFloor);
                 }
 
                 this.floor = value;

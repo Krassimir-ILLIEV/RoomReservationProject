@@ -4,12 +4,12 @@
     using System.Collections.Generic;
     using System.Text;
 
-    class RoomManager
+   internal class RoomManager
     {
         private Dictionary<int, Room> rooms;
         private List<Room> listOfRooms;
         private Dictionary<int, HashSet<Timeslot>> roomSchedule; // int is roomId
-        private Dictionary<int, SortedSet<Timeslot>> roomSchedule_test;
+        private Dictionary<int, SortedSet<Timeslot>> roomScheduleTest;
 
         // SORTED SET<t> SORTED BY TIMESLOT begintime is better
         // private Scheduler scheduler;

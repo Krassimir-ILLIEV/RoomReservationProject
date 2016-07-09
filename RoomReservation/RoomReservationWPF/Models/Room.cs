@@ -10,11 +10,11 @@
     internal class Room : IRoom
     {
         // Constants
-        private const int minCapacity = 0;
-        private const int maxCapacity = 500;
-        private const int minFloor = 0;
-        private const int maxFloor = 13;
-        
+        private const int MinCapacity = 0;
+        private const int MaxCapacity = 500;
+        private const int MinFloor = 0;
+        private const int MaxFloor = 13;
+
         private static int roomIdGenerator = 1;
         private readonly int roomID;
         private int capacity;
@@ -96,13 +96,13 @@
 
             set
             {
-                if (value < minCapacity)
+                if (value < MinCapacity)
                 {
-                    throw new RoomExceptions("Capacity must be equal or more then {0}" , minCapacity);
+                    throw new RoomExceptions("Capacity must be equal or more then {0}", MinCapacity);
                 }
-                else if (value > maxCapacity)
+                else if (value > MaxCapacity)
                 {
-                    throw new RoomExceptions("Capacity must be less than {0}" , maxCapacity);
+                    throw new RoomExceptions("Capacity must be less than {0}", MaxCapacity);
                 }
 
                 this.capacity = value;
@@ -162,13 +162,13 @@
 
             set
             {
-                if (value < minFloor)
+                if (value < MinFloor)
                 {
-                    throw new RoomExceptions("Floor must be greater then {0}", minFloor);
+                    throw new RoomExceptions("Floor must be greater then {0}", MinFloor);
                 }
-                else if (value > maxFloor)
+                else if (value > MaxFloor)
                 {
-                    throw new RoomExceptions("Floor must be smaller then {0}", maxFloor);
+                    throw new RoomExceptions("Floor must be smaller then {0}", MaxFloor);
                 }
 
                 this.floor = value;
@@ -197,6 +197,7 @@
         {
             return string.Format("Room Id: {0}{1}Capacity: {2}{3}Floor: {4}{5}", this.roomID, Environment.NewLine, this.capacity, Environment.NewLine, this.floor, Environment.NewLine);
         }
+
         /* roomId;
 - roomType (conference, cinema,etc, type Enum);
 - capacity (in terms of people);

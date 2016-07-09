@@ -4,14 +4,15 @@
 
     public class PricesException : ApplicationException
     {
-        //Fields
+        // Fields
 
-        //Constructors
+        // Constructors
         public PricesException(string message, int price) : base(message)
             {
             this.Price = price;
             }
-        //Properties
+
+        // Properties
         public int Price
         {
             get;
