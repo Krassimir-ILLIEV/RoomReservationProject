@@ -21,24 +21,21 @@
             int buildingID,
         EnumBuildingLocation buildingLocation,
         EnumBuildingTypes buildingType,
-        int capacity, int floors,
+        int capacity,
+        int floors,
         Coordinates coordinates)
         {
-            this.buildingID = BuildingID;
-            this.buildingLocation = BuildingLocation;
-            this.buildingType = BuildingType;
-            this.capacity = Capacity;
-            this.floors = Floors;
-            this.coordianates = coordinates;
+            this.BuildingID = buildingID;
+            this.BuildingLocation = buildingLocation;
+            this.BuildingType = buildingType;
+            this.Capacity = capacity;
+            this.Floors = floors;
+            this.Coordinates = coordinates;
         }
 
-        public int BuildingID
-        {
-            get
-            {
-                return this.buildingID;
-            }
-        }
+        public Coordinates Coordinates { get; set; }
+
+        public int BuildingID { get; set; }
 
         public EnumBuildingTypes BuildingType
         {
@@ -66,32 +63,26 @@
             }
         }
 
-        public int Capacity
-        {
-            get
-            {
-                return capacity;
-            }
-        }
+        public int Capacity { get; set; }
 
-        public int Floors
-        {
-            get
-            {
-                return this.floors;
-            }
-        }
+        public int Floors { get; set; }
 
         public override string ToString()
         {
             return string.Format(
                 "Building Id: {0}{1} Location: {2}{3} Type: {4}{5} Capacity: {6}{7} Floors: {8}{9} Coordinates: {10}{11}",
-                this.buildingID, Environment.NewLine,
-                this.buildingLocation, Environment.NewLine,
-                this.buildingType, Environment.NewLine,
-                this.capacity, Environment.NewLine,
-                this.floors, Environment.NewLine,
-                this.coordianates, Environment.NewLine);
+                this.buildingID,
+                Environment.NewLine,
+                this.buildingLocation,
+                Environment.NewLine,
+                this.buildingType,
+                Environment.NewLine,
+                this.capacity,
+                Environment.NewLine,
+                this.floors,
+                Environment.NewLine,
+                this.coordianates,
+                Environment.NewLine);
         }
     }
 }

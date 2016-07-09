@@ -21,6 +21,7 @@
         private Location location;
 
         public Room(
+            int roomId,
             int capacity,
             int floor,
             List<MultimediaDevice> listMultimedia,
@@ -30,16 +31,16 @@
         decimal rentPricePerHour,
         Location location)
         {
-            this.roomID = RoomId;
-            this.capacity = Capacity;
-            this.floor = Floor;
-            this.listMultimedia = ListMultimedia;
-            this.roomType = RoomType;
-            this.capacityRange = CapacityRange;
-            this.rentPriceRange = RentPriceRange;
-            this.rentPricePerHour = RentPricePerHour;
-            this.location = Location;
-            this.roomID = roomIdGenerator;
+            this.RoomId = roomId;
+            this.Capacity = capacity;
+            this.Floor = floor;
+            this.ListMultimedia = listMultimedia;
+            this.RoomType = roomType;
+            this.CapacityRange = capacityRange;
+            this.RentPriceRange = rentPriceRange;
+            this.RentPricePerHour = rentPricePerHour;
+            this.Location = location;
+            this.RoomId = roomIdGenerator;
             roomIdGenerator++;
         }
 
@@ -47,39 +48,11 @@
         {
         }
 
-        public int RoomId
-        {
-            get
-            {
-                return this.roomID;
-            }
-        }
+        public int RoomId { get; private set; }
 
-        public EnumCapacityRange CapacityRange
-        {
-            get
-            {
-                return this.capacityRange;
-            }
+        public EnumCapacityRange CapacityRange { get; set; }
 
-            set
-            {
-                this.capacityRange = value;
-            }
-        }
-
-        public EnumRoomTypes RoomType
-        {
-            get
-            {
-                return this.roomType;
-            }
-
-            set
-            {
-                this.roomType = value;
-            }
-        }
+        public EnumRoomTypes RoomType { get; set; }
 
         public int Capacity
         {
@@ -121,31 +94,9 @@
             }
         }
 
-        public EnumRentPriceRange RentPriceRange
-        {
-            get
-            {
-                return this.rentPriceRange;
-            }
+        public EnumRentPriceRange RentPriceRange { get; set; }
 
-            set
-            {
-                this.rentPriceRange = value;
-            }
-        }
-
-        public decimal RentPricePerHour
-        {
-            get
-            {
-                return this.rentPricePerHour;
-            }
-
-            set
-            {
-                this.rentPricePerHour = value;
-            }
-        }
+        public decimal RentPricePerHour { get; set; }
 
         public int Floor
         {
@@ -187,6 +138,7 @@
         {
             return string.Format("Room Id: {0}{1}Capacity: {2}{3}Floor: {4}{5}", this.roomID, Environment.NewLine, this.capacity, Environment.NewLine, this.floor, Environment.NewLine);
         }
+
         /* roomId;
 - roomType (conference, cinema,etc, type Enum);
 - capacity (in terms of people);

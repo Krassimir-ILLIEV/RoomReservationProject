@@ -19,23 +19,23 @@
             Trace.WriteLine("-----");
         }
 
-        private void bookTab_Click(object sender, RoutedEventArgs e)
+        private void BookTab_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void registerTab_Click(object sender, RoutedEventArgs e)
+        private void RegisterTab_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void createRoomTab_Click(object sender, RoutedEventArgs e)
+        private void CreateRoomTab_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void createBuildingTab_Click(object sender, RoutedEventArgs e)
+        private void CreateBuildingTab_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void createEventTab_Click(object sender, RoutedEventArgs e)
+        private void CreateEventTab_Click(object sender, RoutedEventArgs e)
         {
         }
 
