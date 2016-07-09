@@ -26,7 +26,6 @@
         }
 
         // additional property 
-
         public override EnumEmployeePriority Priority
         {
             get

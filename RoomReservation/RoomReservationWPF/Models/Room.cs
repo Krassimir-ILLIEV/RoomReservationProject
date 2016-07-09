@@ -36,16 +36,16 @@
         decimal rentPricePerHour,
         Location location)
         {
-            this.roomID = RoomId;
-            this.capacity = Capacity;
-            this.floor = Floor;
-            this.listMultimedia = ListMultimedia;
-            this.roomType = RoomType;
-            this.capacityRange = CapacityRange;
-            this.rentPriceRange = RentPriceRange;
-            this.rentPricePerHour = RentPricePerHour;
-            this.location = Location;
-            this.roomID = roomIdGenerator;
+            this.roomID = roomId;
+            this.Capacity = capacity;
+            this.Floor = floor;
+            this.ListMultimedia = listMultimedia;
+            this.RoomType = roomType;
+            this.CapacityRange = capacityRange;
+            this.RentPriceRange = rentPriceRange;
+            this.RentPricePerHour = rentPricePerHour;
+            this.Location = location;
+            this.RoomID = roomIdGenerator;
             roomIdGenerator++;
         }
 
@@ -53,39 +53,11 @@
         {
         }
 
-        public int RoomId
-        {
-            get
-            {
-                return this.roomID;
-            }
-        }
+        public int roomId { get; private set; }
 
-        public EnumCapacityRange CapacityRange
-        {
-            get
-            {
-                return this.capacityRange;
-            }
+        public EnumCapacityRange CapacityRange { get; set; }
 
-            set
-            {
-                this.capacityRange = value;
-            }
-        }
-
-        public EnumRoomTypes RoomType
-        {
-            get
-            {
-                return this.roomType;
-            }
-
-            set
-            {
-                this.roomType = value;
-            }
-        }
+        public EnumRoomTypes RoomType { get; set; }
 
         public int Capacity
         {
@@ -127,31 +99,9 @@
             }
         }
 
-        public EnumRentPriceRange RentPriceRange
-        {
-            get
-            {
-                return this.rentPriceRange;
-            }
+        public EnumRentPriceRange RentPriceRange { get; set; }
 
-            set
-            {
-                this.rentPriceRange = value;
-            }
-        }
-
-        public decimal RentPricePerHour
-        {
-            get
-            {
-                return this.rentPricePerHour;
-            }
-
-            set
-            {
-                this.rentPricePerHour = value;
-            }
-        }
+        public decimal RentPricePerHour { get; set; }
 
         public int Floor
         {
@@ -192,6 +142,8 @@
                 this.location = value;
             }
         }
+
+        public int RoomID { get; private set; }
 
         public override string ToString()
         {

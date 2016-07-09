@@ -6,83 +6,44 @@
 
     public class Building
     {
+        // Fields
         private int buildingID;
         private EnumBuildingTypes buildingType;
         private EnumBuildingLocation buildingLocation;
-        private int capacity;
+        private int roomCount;
         private int floors;
         private Coordinates coordianates;
 
-        public Building()
-        {
-        }
-
+        // Constructor
         public Building(
             int buildingID,
         EnumBuildingLocation buildingLocation,
         EnumBuildingTypes buildingType,
-        int capacity,
+        int roomCount,
         int floors,
         Coordinates coordinates)
         {
-            this.buildingID = BuildingID;
-            this.buildingLocation = BuildingLocation;
-            this.buildingType = BuildingType;
-            this.capacity = Capacity;
-            this.floors = Floors;
-            this.coordianates = coordinates;
+            this.BuildingID = buildingID;
+            this.BuildingLocation = buildingLocation;
+            this.BuildingType = buildingType;
+            this.RoomCount = roomCount;
+            this.Floors = floors;
+            this.Coordinate = coordinates;
         }
 
-        public int BuildingID
-        {
-            get
-            {
-                return this.buildingID;
-            }
-        }
+        // Properties
+        public int BuildingID { get; private set; }
 
-        public EnumBuildingTypes BuildingType
-        {
-            get
-            {
-                return this.buildingType;
-            }
+        public EnumBuildingTypes BuildingType { get; private set; }
+        
+        public Coordinates Coordinate { get; private set; }
 
-            set
-            {
-                this.buildingType = value;
-            }
-        }
+        public EnumBuildingLocation BuildingLocation { get; private set; }
+        
+        public int RoomCount { get; private set; }
 
-        public EnumBuildingLocation BuildingLocation
-        {
-            get
-            {
-                return this.buildingLocation;
-            }
-
-            set
-            {
-                this.buildingLocation = value;
-            }
-        }
-
-        public int Capacity
-        {
-            get
-            {
-                return capacity;
-            }
-        }
-
-        public int Floors
-        {
-            get
-            {
-                return this.floors;
-            }
-        }
-
+        public int Floors { get; private set; }
+        
         public override string ToString()
         {
             return string.Format(
@@ -93,7 +54,7 @@
                 Environment.NewLine,
                 this.buildingType,
                 Environment.NewLine,
-                this.capacity,
+                this.roomCount,
                 Environment.NewLine,
                 this.floors,
                 Environment.NewLine,

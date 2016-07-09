@@ -67,8 +67,8 @@
 
         public void AddNewRoom(Room room)
         {
-            this.rooms.Add(room.RoomId, room);
-            this.roomSchedule.Add(room.RoomId, new HashSet<Timeslot>());
+            this.rooms.Add(room.roomId, room);
+            this.roomSchedule.Add(room.roomId, new HashSet<Timeslot>());
         }
 
         public string GetRoomSchedule(int roomId)

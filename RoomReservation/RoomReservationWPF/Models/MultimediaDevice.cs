@@ -16,7 +16,7 @@
         {
             this.Model = model;
             this.Brightness = brightness;
-            this.SuportedScreenSize = suportedScreenSize;
+            this.SuportedScreenSize = suportedScreen;
         }
 
         public string Model
