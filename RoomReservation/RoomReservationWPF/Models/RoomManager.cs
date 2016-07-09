@@ -4,6 +4,8 @@
     using System.Collections.Generic;
     using System.Text;
 
+    using RoomReservationWPF.Exceptions;
+
    internal class RoomManager
     {
         private Dictionary<int, Room> rooms;
@@ -71,10 +73,9 @@
 
         public string GetRoomSchedule(int roomId)
         {
-            // throw exception if it does not exist in roomSchedule
             if (!this.roomSchedule.ContainsKey(roomId))
             {
-                throw new ArgumentException("TO DO WRITE A MEANINGFUL EXCEPTION");
+                throw new RoomExceptions("The room is not appear int room schedule");
             }
 
             HashSet<Timeslot> roomTimeslots = this.roomSchedule[roomId];
