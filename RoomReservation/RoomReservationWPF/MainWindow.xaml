@@ -87,17 +87,32 @@
         </TabItem>
         <TabItem x:Name="registerTab" Header="Register">
             <Grid>
-                <Label x:Name="usernameLabel" Content="Username:" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.75,-0.173"/>
-                <Label x:Name="passwordlabel" Content="Password:" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="userNameBox"  Text="" HorizontalAlignment="Left" Height="23" Margin="118,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <TextBox x:Name="passwordBox" Text="" HorizontalAlignment="Left" Height="23" Margin="118,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <Button x:Name="Lo" Content="Button" HorizontalAlignment="Left" Margin="60,164,0,0" VerticalAlignment="Top" Width="76"/>
+                <Label x:Name="usernameLabel" Content="Username:" HorizontalAlignment="Left" Margin="290,160,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.75,-0.173"/>
+                <Label x:Name="passwordlabel" Content="Password:" HorizontalAlignment="Left" Margin="290,204,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="userNameBox"  Text="" HorizontalAlignment="Left" Height="23" Margin="398,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <PasswordBox x:Name="passwordBox1" HorizontalAlignment="Left" Margin="398,207,0,0" VerticalAlignment="Top" Height="22" Width="120"/>
+
+                <Button x:Name="logIn" Content="Log in" HorizontalAlignment="Left" Margin="340,292,0,0" VerticalAlignment="Top" Width="76" Click="createRoom_Click"/>
+
 
 
             </Grid>
         </TabItem>
         <TabItem x:Name="createRoomTab" Header="Create a room">
-            <CheckBox x:Name="checkBox2" Content="CheckBox" Height="100" Width="100"/>
+            <Grid>
+                <Label Content="Type" HorizontalAlignment="Left" Height="37" Margin="328,155,0,0" VerticalAlignment="Top" Width="122"/>
+                <Label Content="Capacity" HorizontalAlignment="Left" Height="37" Margin="328,123,0,0" VerticalAlignment="Top" Width="122"/>
+                <Label Content="Price" HorizontalAlignment="Left" Height="37" Margin="328,188,0,0" VerticalAlignment="Top" Width="122"/>
+                <Label Content="Time" HorizontalAlignment="Left" Height="37" Margin="328,224,0,0" VerticalAlignment="Top" Width="122"/>
+                <Label Content="Location" HorizontalAlignment="Left" Height="37" Margin="328,263,0,0" VerticalAlignment="Top" Width="122"/>
+
+                <TextBox x:Name="createCapacity" HorizontalAlignment="Left" Margin="400,128,0,0" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="createType" HorizontalAlignment="Left" Margin="400,160,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.15,0.227"/>
+                <TextBox x:Name="createPrice" HorizontalAlignment="Left" Margin="400,194,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.104,0"/>
+                <TextBox x:Name="createTime" HorizontalAlignment="Left" Margin="400,228,0,0" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="createLocation" HorizontalAlignment="Left" Margin="400,267,0,0" VerticalAlignment="Top" Width="120"/>
+                <Button x:Name="createRoom" Content="Create" HorizontalAlignment="Left" Margin="364,329,0,0" VerticalAlignment="Top" Width="75" Click="createRoom_Click"/>
+            </Grid>
         </TabItem>
 
 

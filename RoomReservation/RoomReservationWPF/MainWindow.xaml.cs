@@ -46,5 +46,15 @@
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         }
+
+        private void logIn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void createRoom_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
