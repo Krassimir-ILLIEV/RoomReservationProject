@@ -6,6 +6,7 @@
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
     using RoomReservationWPF.Models;
+    using System.Text;
 
     internal class Room : IRoom
     {
@@ -47,10 +48,6 @@
             this.Location = location;
             this.RoomID = roomIdGenerator;
             roomIdGenerator++;
-        }
-
-        public Room()
-        {
         }
 
         public int roomId { get; private set; }
@@ -147,7 +144,18 @@
 
         public override string ToString()
         {
-            return string.Format("Room Id: {0}{1}Capacity: {2}{3}Floor: {4}{5}", this.roomID, Environment.NewLine, this.capacity, Environment.NewLine, this.floor, Environment.NewLine);
+            StringBuilder sb = new StringBuilder();
+            sb.Append(base.ToString());
+            sb.AppendLine(string.Format("Room ID: {0}", this.roomId));
+            sb.AppendLine(string.Format("Capacity: {0}", this.Capacity));
+            sb.AppendLine(string.Format("Floor: {0}", this.Floor));
+            sb.AppendLine(string.Format("Multimedia: {0}", this.ListMultimedia));
+            sb.AppendLine(string.Format("Room Type: {0}", this.RoomType));
+            sb.AppendLine(string.Format("Capacity range: {0}", this.CapacityRange));
+            sb.AppendLine(string.Format("Rent price range: {0}", this.RentPriceRange));
+            sb.AppendLine(string.Format("Rent price per hour: {0}", this.RentPricePerHour));
+            sb.AppendLine(string.Format("Location: {0}", this.Location));
+            return sb.ToString();
         }
 
         /* roomId;
