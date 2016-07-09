@@ -6,28 +6,31 @@
 
     public class Building
     {
+        // Fields
         private int buildingID;
         private EnumBuildingTypes buildingType;
         private EnumBuildingLocation buildingLocation;
-        private int capacity;
+        private int roomCount;
         private int floors;
         private Coordinates coordianates;
 
-        public Building()
-        {
-        }
-
+        // Constructor
         public Building(
             int buildingID,
         EnumBuildingLocation buildingLocation,
         EnumBuildingTypes buildingType,
+<<<<<<< HEAD
         int capacity,
+=======
+        int roomCount,
+>>>>>>> master
         int floors,
         Coordinates coordinates)
         {
             this.BuildingID = buildingID;
             this.BuildingLocation = buildingLocation;
             this.BuildingType = buildingType;
+<<<<<<< HEAD
             this.Capacity = capacity;
             this.Floors = floors;
             this.Coordinates = coordinates;
@@ -36,20 +39,21 @@
         public Coordinates Coordinates { get; set; }
 
         public int BuildingID { get; set; }
-
-        public EnumBuildingTypes BuildingType
-        {
-            get
-            {
-                return this.buildingType;
-            }
-
-            set
-            {
-                this.buildingType = value;
-            }
+=======
+            this.RoomCount = roomCount;
+            this.Floors = floors;
+            this.Coordinate = coordinates;
         }
 
+        // Properties
+        public int BuildingID { get; private set; }
+>>>>>>> master
+
+        public EnumBuildingTypes BuildingType { get; private set; }
+        
+        public Coordinates Coordinate { get; private set; }
+
+<<<<<<< HEAD
         public EnumBuildingLocation BuildingLocation
         {
             get
@@ -66,7 +70,14 @@
         public int Capacity { get; set; }
 
         public int Floors { get; set; }
+=======
+        public EnumBuildingLocation BuildingLocation { get; private set; }
+        
+        public int RoomCount { get; private set; }
+>>>>>>> master
 
+        public int Floors { get; private set; }
+        
         public override string ToString()
         {
             return string.Format(
@@ -77,7 +88,11 @@
                 Environment.NewLine,
                 this.buildingType,
                 Environment.NewLine,
+<<<<<<< HEAD
                 this.capacity,
+=======
+                this.roomCount,
+>>>>>>> master
                 Environment.NewLine,
                 this.floors,
                 Environment.NewLine,

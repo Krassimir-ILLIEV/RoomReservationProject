@@ -2,10 +2,12 @@
 {
     public enum EnumEmployeePriority
     {
-        VeryLow = 0,
-        Low = 1,
-        Medium = 2,
-        High = 3,
-        VeryHigh = 4
+        NotSet = 0,
+        VeryLow = 1,
+        Low = 2,
+        Medium = 3,
+        High = 4,
+        VeryHigh = 5,
+        UltraHigh = 6
     }
 }

@@ -8,10 +8,15 @@
 
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
+    using RoomReservationWPF.Exceptions;
     using RoomReservationWPF.Models;
 
     public class Request : IRoom
     {
+        // Constants
+        private const int MinCapacity = 0;
+        private const int MinFloor = 0;
+
         private int capacity;
         private EnumCapacityRange capacityRange;
         private int floor;
@@ -53,7 +58,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Capacity must be greater then 0");
+                    throw new RoomExceptions("Capacity must be greater then {0}", MinCapacity);
                 }
 
                 this.capacity = value;
@@ -85,7 +90,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("Floor must be greater then 0");
+                    throw new RoomExceptions("Floor must be greater then {0}", MinFloor);
                 }
 
                 this.floor = value;
@@ -103,7 +108,7 @@
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("List of multimedia divices must be set!");
+                    throw new RoomExceptions("List of multimedia divices must be set!");
                 }
 
                 this.listMultimedia = value;
@@ -121,7 +126,7 @@
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("Location must be set!");
+                    throw new RoomExceptions("Location must be set!");
                 }
 
                 this.location = value;
@@ -139,7 +144,7 @@
             {
                 if (value < 0)
                 {
-                    throw new ArgumentException("RentPricePerHour must be greater then zero");
+                    throw new PricesException("RentPricePerHour must be greater then {0}", 1);
                 }
 
                 this.rentPricePerHour = value;

@@ -2,13 +2,20 @@
 {
     using System;
     using System.Collections.Generic;
-
+    using RoomReservationWPF.Exceptions;
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Contracts;
     using RoomReservationWPF.Models;
+    using System.Text;
 
     internal class Room : IRoom
     {
+        // Constants
+        private const int MinCapacity = 0;
+        private const int MaxCapacity = 500;
+        private const int MinFloor = 0;
+        private const int MaxFloor = 13;
+
         private static int roomIdGenerator = 1;
         private readonly int roomID;
         private int capacity;
@@ -31,7 +38,11 @@
         decimal rentPricePerHour,
         Location location)
         {
+<<<<<<< HEAD
             this.RoomId = roomId;
+=======
+            this.roomID = roomId;
+>>>>>>> master
             this.Capacity = capacity;
             this.Floor = floor;
             this.ListMultimedia = listMultimedia;
@@ -40,18 +51,25 @@
             this.RentPriceRange = rentPriceRange;
             this.RentPricePerHour = rentPricePerHour;
             this.Location = location;
+<<<<<<< HEAD
             this.RoomId = roomIdGenerator;
+=======
+            this.RoomID = roomIdGenerator;
+>>>>>>> master
             roomIdGenerator++;
         }
 
-        public Room()
-        {
-        }
+        public int roomId { get; private set; }
 
+<<<<<<< HEAD
         public int RoomId { get; private set; }
 
         public EnumCapacityRange CapacityRange { get; set; }
 
+=======
+        public EnumCapacityRange CapacityRange { get; set; }
+
+>>>>>>> master
         public EnumRoomTypes RoomType { get; set; }
 
         public int Capacity
@@ -63,13 +81,13 @@
 
             set
             {
-                if (value < 0)
+                if (value < MinCapacity)
                 {
-                    throw new ArgumentException("Capacity must be greater then 0");
+                    throw new RoomExceptions("Capacity must be equal or more then {0}", MinCapacity);
                 }
-                else if (value > 500)
+                else if (value > MaxCapacity)
                 {
-                    throw new ArgumentException("Capacity must be less than 500");
+                    throw new RoomExceptions("Capacity must be less than {0}", MaxCapacity);
                 }
 
                 this.capacity = value;
@@ -87,7 +105,7 @@
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("List of multimedia divices must be set!");
+                    throw new RoomExceptions("List of multimedia divices must be set!");
                 }
 
                 this.listMultimedia = value;
@@ -107,9 +125,13 @@
 
             set
             {
-                if (value < 0)
+                if (value < MinFloor)
                 {
-                    throw new ArgumentException("Floor must be greater then 0");
+                    throw new RoomExceptions("Floor must be greater then {0}", MinFloor);
+                }
+                else if (value > MaxFloor)
+                {
+                    throw new RoomExceptions("Floor must be smaller then {0}", MaxFloor);
                 }
 
                 this.floor = value;
@@ -127,16 +149,29 @@
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("Location must be set!");
+                    throw new RoomExceptions("Location must be set!");
                 }
 
                 this.location = value;
             }
         }
 
+        public int RoomID { get; private set; }
+
         public override string ToString()
         {
-            return string.Format("Room Id: {0}{1}Capacity: {2}{3}Floor: {4}{5}", this.roomID, Environment.NewLine, this.capacity, Environment.NewLine, this.floor, Environment.NewLine);
+            StringBuilder sb = new StringBuilder();
+            sb.Append(base.ToString());
+            sb.AppendLine(string.Format("Room ID: {0}", this.roomId));
+            sb.AppendLine(string.Format("Capacity: {0}", this.Capacity));
+            sb.AppendLine(string.Format("Floor: {0}", this.Floor));
+            sb.AppendLine(string.Format("Multimedia: {0}", this.ListMultimedia));
+            sb.AppendLine(string.Format("Room Type: {0}", this.RoomType));
+            sb.AppendLine(string.Format("Capacity range: {0}", this.CapacityRange));
+            sb.AppendLine(string.Format("Rent price range: {0}", this.RentPriceRange));
+            sb.AppendLine(string.Format("Rent price per hour: {0}", this.RentPricePerHour));
+            sb.AppendLine(string.Format("Location: {0}", this.Location));
+            return sb.ToString();
         }
 
         /* roomId;

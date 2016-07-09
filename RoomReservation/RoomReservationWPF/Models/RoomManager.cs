@@ -4,7 +4,13 @@
     using System.Collections.Generic;
     using System.Text;
 
+<<<<<<< HEAD
     internal class RoomManager
+=======
+    using RoomReservationWPF.Exceptions;
+
+   internal class RoomManager
+>>>>>>> master
     {
         private Dictionary<int, Room> rooms;
         private List<Room> listOfRooms;
@@ -65,16 +71,15 @@
 
         public void AddNewRoom(Room room)
         {
-            this.rooms.Add(room.RoomId, room);
-            this.roomSchedule.Add(room.RoomId, new HashSet<Timeslot>());
+            this.rooms.Add(room.roomId, room);
+            this.roomSchedule.Add(room.roomId, new HashSet<Timeslot>());
         }
 
         public string GetRoomSchedule(int roomId)
         {
-            // throw exception if it does not exist in roomSchedule
             if (!this.roomSchedule.ContainsKey(roomId))
             {
-                throw new ArgumentException("TO DO WRITE A MEANINGFUL EXCEPTION");
+                throw new RoomExceptions("The room is not appear int room schedule");
             }
 
             HashSet<Timeslot> roomTimeslots = this.roomSchedule[roomId];
