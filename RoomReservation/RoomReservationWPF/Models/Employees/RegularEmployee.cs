@@ -48,7 +48,7 @@
 
         public string Name { get; set; }
 
-        public abstract EnumEmployeePriority Priority { get; }
+        public abstract EmployeePriorityType Priority { get; }
 
         public string Title { get; private set; }
 

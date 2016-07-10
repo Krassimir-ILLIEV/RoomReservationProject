@@ -18,22 +18,22 @@
         private const int MinFloor = 0;
 
         private int capacity;
-        private EnumCapacityRange capacityRange;
+        private CapacityRangeType capacityRange;
         private int floor;
         private List<MultimediaDevice> listMultimedia;
         private Location location;
         private decimal rentPricePerHour;
-        private EnumRentPriceRange rentPriceRange;
+        private RentPriceRangeType rentPriceRange;
         private EnumRoomTypes roomType;
 
         public Request(
             int capacity,
-            EnumCapacityRange capacityRange,
+            CapacityRangeType capacityRange,
             int floor,
             List<MultimediaDevice> listMultimedia,
             Location location,
             decimal rentPricePerHour,
-            EnumRentPriceRange rentPriceRange,
+            RentPriceRangeType rentPriceRange,
             EnumRoomTypes roomType)
         {
             // Room modelDesiredRoom = new Room(roomType, capacity, listMultimedia, rentPriceRange, location);
@@ -65,7 +65,7 @@
             }
         }
 
-        public EnumCapacityRange CapacityRange
+        public CapacityRangeType CapacityRange
         {
             get
             {
@@ -151,7 +151,7 @@
             }
         }
 
-        public EnumRentPriceRange RentPriceRange
+        public RentPriceRangeType RentPriceRange
         {
             get
             {

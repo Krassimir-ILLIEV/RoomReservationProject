@@ -22,8 +22,8 @@
         private int floor;
         private List<MultimediaDevice> listMultimedia;
         private EnumRoomTypes roomType;
-        private EnumCapacityRange capacityRange;
-        private EnumRentPriceRange rentPriceRange;
+        private CapacityRangeType capacityRange;
+        private RentPriceRangeType rentPriceRange;
         private decimal rentPricePerHour;
         private Location location;
 
@@ -32,8 +32,8 @@
             int floor,
             List<MultimediaDevice> listMultimedia,
         EnumRoomTypes roomType,
-        EnumCapacityRange capacityRnage,
-        EnumRentPriceRange rentPriceRnage,
+        CapacityRangeType capacityRnage,
+        RentPriceRangeType rentPriceRnage,
         decimal rentPricePerHour,
         Location location)
         {
@@ -52,7 +52,7 @@
 
         public int roomId { get; private set; }
 
-        public EnumCapacityRange CapacityRange { get; set; }
+        public CapacityRangeType CapacityRange { get; set; }
 
         public EnumRoomTypes RoomType { get; set; }
 
@@ -96,7 +96,7 @@
             }
         }
 
-        public EnumRentPriceRange RentPriceRange { get; set; }
+        public RentPriceRangeType RentPriceRange { get; set; }
 
         public decimal RentPricePerHour { get; set; }
 

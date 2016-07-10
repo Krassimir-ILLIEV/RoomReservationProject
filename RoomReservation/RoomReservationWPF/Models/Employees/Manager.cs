@@ -30,11 +30,11 @@
             this.YearsOfExperience = (int)info.GetValue("YearsExperience", typeof(int));
         }
 
-        public override EnumEmployeePriority Priority
+        public override EmployeePriorityType Priority
         {
             get
             {
-                return EnumEmployeePriority.Medium;
+                return EmployeePriorityType.Medium;
             }
         }
 

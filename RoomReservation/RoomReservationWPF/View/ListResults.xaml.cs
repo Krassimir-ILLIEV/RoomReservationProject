@@ -23,5 +23,10 @@ namespace RoomReservationWPF.View
         {
             InitializeComponent();
         }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -13,7 +13,7 @@
 
         string Name { get; }
 
-        EnumEmployeePriority Priority { get; }
+        EmployeePriorityType Priority { get; }
 
         Location EmployeeLocation { get; }
     }

@@ -25,11 +25,11 @@
         }
 
         // additional property
-        public override EnumEmployeePriority Priority
+        public override EmployeePriorityType Priority
         {
             get
             {
-                return EnumEmployeePriority.UltraHigh;
+                return EmployeePriorityType.UltraHigh;
             }
         }
 

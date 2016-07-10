@@ -27,11 +27,11 @@
             this.Department = (string)info.GetValue("Department", typeof(string));
         }
 
-        public override EnumEmployeePriority Priority
+        public override EmployeePriorityType Priority
         {
             get
             {
-                return EnumEmployeePriority.VeryHigh;
+                return EmployeePriorityType.VeryHigh;
             }
         }
 

@@ -32,11 +32,11 @@
             this.InternshipPeriodInMonths = (int)info.GetValue("InternshipPeriod", typeof(int));
         }
 
-        public override EnumEmployeePriority Priority
+        public override EmployeePriorityType Priority
         {
             get
             {
-                return EnumEmployeePriority.VeryLow;
+                return EmployeePriorityType.VeryLow;
             }
         }
 

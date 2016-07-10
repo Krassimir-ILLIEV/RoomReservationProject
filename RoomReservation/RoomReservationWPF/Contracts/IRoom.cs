@@ -8,7 +8,7 @@
 
     internal interface IRoom
     {
-        EnumCapacityRange CapacityRange { get; set; }
+        CapacityRangeType CapacityRange { get; set; }
 
         // add corresponding fields
         EnumRoomTypes RoomType { get; set; }
@@ -17,7 +17,7 @@
 
         List<MultimediaDevice> ListMultimedia { get; set; }
 
-        EnumRentPriceRange RentPriceRange { get; set; }
+        RentPriceRangeType RentPriceRange { get; set; }
 
         decimal RentPricePerHour { get; set; }
 

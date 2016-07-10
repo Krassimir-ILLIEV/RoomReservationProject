@@ -53,11 +53,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Common\EnumBuildingLocation.cs" />
-    <Compile Include="Common\EnumBuildingType.cs" />
-    <Compile Include="Common\EnumCapacityRange.cs" />
-    <Compile Include="Common\EnumEmployeePriority.cs" />
-    <Compile Include="Common\EnumRentPriceRange.cs" />
+    <Compile Include="Common\BuildingLocationType.cs" />
+    <Compile Include="Common\BuildingType.cs" />
+    <Compile Include="Common\CapacityRangeType.cs" />
+    <Compile Include="Common\EmployeePriorityType.cs" />
+    <Compile Include="Common\MultimediaType.cs" />
+    <Compile Include="Common\RentPriceRangeType.cs" />
     <Compile Include="Contracts\IRegularEmployee.cs" />
     <Compile Include="Contracts\IRequest.cs" />
     <Compile Include="Contracts\IRoom.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="Models\Employees\CFO.cs" />
     <Compile Include="Models\Employees\CIO.cs" />
     <Compile Include="Models\Coordinates.cs" />
-    <Compile Include="Common\EnumRoomTypes.cs" />
+    <Compile Include="Common\RoomType.cs" />
     <Compile Include="Models\Employees\DepartmentManager.cs" />
     <Compile Include="Models\Employees\Employee.cs" />
     <Compile Include="Models\Employees\Intern.cs" />

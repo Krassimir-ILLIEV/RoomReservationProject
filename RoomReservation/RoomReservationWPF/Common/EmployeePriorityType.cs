@@ -1,6 +1,6 @@
 ﻿namespace RoomReservationWPF.Common
 {
-    public enum EnumEmployeePriority
+    public enum EmployeePriorityType
     {
         NotSet = 0,
         VeryLow = 1,

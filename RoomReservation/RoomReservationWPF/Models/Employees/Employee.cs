@@ -31,11 +31,11 @@
         public string Team { get; private set; }
 
         // or another property?
-        public override EnumEmployeePriority Priority
+        public override EmployeePriorityType Priority
         {
             get
             {
-                return EnumEmployeePriority.Low;
+                return EmployeePriorityType.Low;
             }
         }
 
