@@ -1,8 +1,7 @@
 ﻿namespace RoomReservationWPF.Contracts
 {
     using System.Collections.Generic;
-
-    using RoomReservation.Models;
+    //using RoomReservation.Models;
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Models;
 
@@ -11,13 +10,13 @@
         CapacityRangeType CapacityRange { get; set; }
 
         // add corresponding fields
-        EnumRoomTypes RoomType { get; set; }
+        RoomType RoomTypeProp { get; set; }
 
         int Capacity { get; set; }
 
         List<MultimediaDevice> ListMultimedia { get; set; }
 
-        RentPriceRangeType RentPriceRange { get; set; }
+        RentPriceRangeType RentPriceRangeTypeProp { get; set; }
 
         decimal RentPricePerHour { get; set; }
 

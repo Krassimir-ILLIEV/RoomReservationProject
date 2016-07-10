@@ -1,0 +1,4 @@
+int capacity, int floor, List<MultimediaDevice> (string model, int brightness, int suportedScreen),enumRoomTypes roomType, enumCapacityRange capacityRnage, enumRentPriceRange rentPriceRnage,decimal rentPricePerHour, Location location
+23,4,[{Type1,Model1,2,300};{Type2,Model11,12,130};{Type3,Model21,22,230}],VIPConferenceRoom,Between11and20,Between0and200,100.00,Varna
+43,5,[{Type2,Model1,2,300};{Type3,Model11,12,130};{Type4,Model21,22,230}],VIPConferenceRoom,Between31and50,Between0and200,150.00,Sofia
+65,6,[],VIPConferenceRoom,Between21and30,Between0and200,200.00,Sofia

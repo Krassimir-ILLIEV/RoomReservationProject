@@ -1,4 +1,4 @@
-﻿namespace RoomReservation.Models
+﻿namespace RoomReservationWPF.Models
 {
     using System;
     using System.Collections.Generic;

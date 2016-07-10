@@ -3,18 +3,18 @@
     using System;
 
 
-    public class DateExeptions : ApplicationException
+    public class DateExceptions : ApplicationException
     {
-        public DateExeptions(string message) : base(message)
+        public DateExceptions(string message) : base(message)
         {
         }
 
-        public DateExeptions(string message, int minDate) : this(message)
+        public DateExceptions(string message, int minDate) : this(message)
         {
             this.MinDate = minDate;
         }
 
-        public DateExeptions(string message, int minDate, int maxDate) : this(message)
+        public DateExceptions(string message, int minDate, int maxDate) : this(message)
         {
             this.MinDate = minDate;
             this.MaxDate = maxDate;

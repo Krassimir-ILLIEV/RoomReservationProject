@@ -8,8 +8,8 @@
     {
         // Fields
         private int buildingID;
-        private EnumBuildingTypes buildingType;
-        private EnumBuildingLocation buildingLocation;
+        private BuildingType buildingType;
+        private BuildingLocationType buildingLocation;
         private int roomCount;
         private int floors;
         private Coordinates coordianates;
@@ -17,8 +17,8 @@
         // Constructor
         public Building(
             int buildingID,
-        EnumBuildingLocation buildingLocation,
-        EnumBuildingTypes buildingType,
+        BuildingLocationType buildingLocation,
+        BuildingType buildingType,
         int roomCount,
         int floors,
         Coordinates coordinates)
@@ -34,11 +34,11 @@
         // Properties
         public int BuildingID { get; private set; }
 
-        public EnumBuildingTypes BuildingType { get; private set; }
+        public BuildingType BuildingType { get; private set; }
         
         public Coordinates Coordinate { get; private set; }
 
-        public EnumBuildingLocation BuildingLocation { get; private set; }
+        public BuildingLocationType BuildingLocation { get; private set; }
         
         public int RoomCount { get; private set; }
 

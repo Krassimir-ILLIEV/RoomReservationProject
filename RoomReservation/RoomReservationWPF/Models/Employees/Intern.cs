@@ -51,7 +51,7 @@
             {
                 if (value < 0 || value > 24)
                 {
-                    throw new DateExeptions("The internship period should be between {0} and {1} months.", minPeriod, maxPeriod);
+                    throw new DateExceptions("The internship period should be between {0} and {1} months.", minPeriod, maxPeriod);
                 }
 
                 this.internshipPeriodInMonths = value;

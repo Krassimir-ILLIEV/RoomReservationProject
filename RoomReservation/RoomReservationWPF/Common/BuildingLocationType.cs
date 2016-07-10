@@ -1,4 +1,4 @@
-﻿namespace RoomReservation.Models
+﻿namespace RoomReservationWPF.Common
 {
     public enum BuildingLocationType
     {

@@ -1,6 +1,6 @@
-﻿namespace RoomReservation.Models
+﻿namespace RoomReservationWPF.Common
 {
-    public enum EnumBuildingTypes
+    public enum BuildingType
     {
         ConferenceBuilding,
         PartyBuilding,

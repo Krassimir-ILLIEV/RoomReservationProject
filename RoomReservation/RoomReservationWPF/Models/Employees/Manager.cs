@@ -49,7 +49,7 @@
             {
                 if (value < 0)
                 {
-                    throw new DateExeptions("The experience of a manager should be a positive number.");
+                    throw new DateExceptions("The experience of a manager should be a positive number.");
                 }
 
                 this.yearsOfExperience = value;
