@@ -13,11 +13,6 @@
     {
         private int yearsOfExperience;
 
-        public Manager() : base()
-        {
-            // default
-        }
-
         public Manager(string name, string title, Location location, int yearsOfExperience)
             : base(name, title, location)
         {
@@ -28,6 +23,13 @@
             : base(info, context)
         {
             this.YearsOfExperience = (int)info.GetValue("YearsExperience", typeof(int));
+        }
+
+        public Manager(string csvStr)
+            :base(csvStr)
+        {
+            string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            this.YearsOfExperience = int.Parse(data[3]);
         }
 
         public override EmployeePriorityType Priority

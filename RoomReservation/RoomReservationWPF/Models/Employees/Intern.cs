@@ -15,11 +15,6 @@
         private const int maxPeriod = 24;
         private int internshipPeriodInMonths;
 
-        public Intern() : base()
-        {
-            // default
-        }
-
         public Intern(string name, string title, Location location, int internshipPeriod)
             : base(name, title, location)
         {
@@ -30,6 +25,13 @@
             : base(info, context)
         {
             this.InternshipPeriodInMonths = (int)info.GetValue("InternshipPeriod", typeof(int));
+        }
+
+        public Intern(string csvStr)
+            :base(csvStr)
+        {
+            string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            this.InternshipPeriodInMonths = int.Parse(data[3]);
         }
 
         public override EmployeePriorityType Priority
@@ -49,7 +51,7 @@
 
             private set
             {
-                if (value < 0 || value > 24)
+                if (value < minPeriod || value > maxPeriod)
                 {
                     throw new DateExceptions("The internship period should be between {0} and {1} months.", minPeriod, maxPeriod);
                 }

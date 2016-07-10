@@ -11,10 +11,7 @@
     [Serializable]
     public class Employee : RegularEmployee, IRegularEmployee, ISerializable
     {
-        public Employee() : base()
-        {
-            // default
-        }
+        private string team;
 
         public Employee(string name, string title, Location location, string team)
             : base(name, title, location)
@@ -28,9 +25,29 @@
             this.Team = (string)info.GetValue("Team", typeof(string));
         }
 
-        public string Team { get; private set; }
+        public Employee(string csvStr)
+            :base(csvStr)
+        {
+            string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            this.Team = data[3];
+        }
 
-        // or another property?
+        public string Team
+        {
+            get
+            {
+                return this.team;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("The employee team cannot be null or empty");
+                }
+                this.team = value;
+            }
+        }
+
         public override EmployeePriorityType Priority
         {
             get

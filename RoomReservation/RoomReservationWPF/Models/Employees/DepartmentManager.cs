@@ -10,10 +10,7 @@
     [Serializable]
     public class DepartmentManager : UnitManager, IRegularEmployee, ISerializable
     {
-        public DepartmentManager() : base()
-        {
-            // default
-        }
+        private string department;
 
         public DepartmentManager(string name, string title, Location location, int yearsOfExperience, string unit, string department)
             : base(name, title, location, yearsOfExperience, unit)
@@ -27,6 +24,13 @@
             this.Department = (string)info.GetValue("Department", typeof(string));
         }
 
+        public DepartmentManager(string csvStr)
+            :base(csvStr)
+        {
+            string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            this.Department = data[5];
+        }
+
         public override EmployeePriorityType Priority
         {
             get
@@ -35,7 +39,21 @@
             }
         }
 
-        public string Department { get; private set; }
+        public string Department
+        {
+            get
+            {
+                return this.department;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("The department cannot be null or empty.");
+                }
+                this.department = value;
+            }
+        }
 
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {

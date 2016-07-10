@@ -10,11 +10,6 @@
     [Serializable]
     public class CIO : DepartmentManager, IRegularEmployee, ISerializable
     {
-        public CIO() : base()
-        {
-            // default
-        }
-
         public CIO(string name, string title, Location location, int yearsOfExperience, string unit, string department)
             : base(name, title, location, yearsOfExperience, unit, department)
         {
@@ -22,6 +17,11 @@
 
         public CIO(SerializationInfo info, StreamingContext context)
             : base(info, context)
+        {
+        }
+
+        public CIO(string csvStr)
+            :base(csvStr)
         {
         }
 
@@ -34,14 +34,5 @@
             }
         }
 
-        public override void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

@@ -14,53 +14,95 @@
     public abstract class RegularEmployee : IRegularEmployee, ISerializable
     {
         private static int employeeIdGenerator = 1;
-        private readonly int employeeID;
+        private string name;
+        private string title;
+        private Location employeeLocation;
 
         public RegularEmployee(string name, string title, Location location)
         {
-            this.Name = name;
-            this.Title = title;
-            this.EmployeeLocation = location;
-            this.employeeID = (employeeIdGenerator++);
+            RegularEmployeeInit(name, title, location);
         }
 
         public RegularEmployee(SerializationInfo info, StreamingContext context)
         {
             this.Name = (string)info.GetValue("EmployeeName", typeof(string));
             this.Title = (string)info.GetValue("EmployeeTitle", typeof(string));
-
-            // Id
-            // location
+            this.EmployeeLocation = (Location)info.GetValue("EmployeeLocation", typeof(Location));
         }
 
-        public RegularEmployee()
+        public RegularEmployee(string csvStr)
         {
-            // default constructor 
+            string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            Location location = new Location(data[2]);
+            RegularEmployeeInit(data[0], data[1], location);
         }
 
-        public int EmployeeID
+        private void RegularEmployeeInit(string name, string title, Location location)
+        {
+            this.Name = name;
+            this.Title = title;
+            this.EmployeeLocation = location;
+            this.EmployeeID = employeeIdGenerator++;
+        }
+
+        public int EmployeeID { get; private set; }
+
+        public string Name
         {
             get
             {
-                return this.employeeID;
+                return this.name;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("The employee name cannot be null or empty");
+                }
+
+                this.name = value;
             }
         }
 
-        public string Name { get; set; }
-
         public abstract EmployeePriorityType Priority { get; }
 
-        public string Title { get; private set; }
+        public string Title
+        {
+            get
+            {
+                return this.title;
+            }
+            private set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("The employee title cannot be null or empty.");
+                }
+                this.title = value;
+            }
+        }
 
-        public Location EmployeeLocation { get; private set; }
+        public Location EmployeeLocation
+        {
+            get
+            {
+                return this.employeeLocation;
+            }
+            private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("Location must be set.");
+                }
+                this.employeeLocation = value;
+            }
+        }
 
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("EmployeeName", this.Name, typeof(string));
             info.AddValue("EmployeeTitle", this.Title, typeof(string));
-
-            // Id
-            // location
+            info.AddValue("EmployeeLocation", this.EmployeeLocation, typeof(Location));
         }
 
         public override string ToString()
@@ -71,8 +113,7 @@
             builder.AppendLine(string.Format("Title: {0}", this.Title));
             builder.AppendLine(string.Format("ID: {0}", this.EmployeeID));
             builder.AppendLine(string.Format("Priority: {0}", this.Priority));
-
-            // location
+            builder.AppendLine(string.Format("Location: {0}", this.EmployeeLocation.ToString()));
             return builder.ToString();
         }
     }
