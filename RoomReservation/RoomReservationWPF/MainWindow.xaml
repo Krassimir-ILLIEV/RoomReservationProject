@@ -109,7 +109,6 @@
                 </ListView>
                 <Label Content="Date Time" HorizontalAlignment="Left" Height="37" Margin="32,28,0,0" VerticalAlignment="Top" Width="122" Grid.Column="1" Grid.RowSpan="2"/>
                 <ComboBox x:Name="BeginTime" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="154,28,0,0" VerticalAlignment="Top" Width="120" Grid.RowSpan="2">
-                    <ComboBoxItem Tag="00:00" Content="not specified"/>
                     <ComboBoxItem Tag="10:00" IsSelected="True" Content="10:00"/>
                     <ComboBoxItem Tag="12:00" Content="12:00"/>
                     <ComboBoxItem Tag="14:00" Content="14:00"/>

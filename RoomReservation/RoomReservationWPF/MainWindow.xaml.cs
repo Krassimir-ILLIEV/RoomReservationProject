@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-//using System.Windows.Forms;
+using System.Windows.Forms;
 using RoomReservation.Models;
 using RoomReservationWPF.Common;
 using RoomReservationWPF.Models;
@@ -39,7 +39,7 @@ namespace RoomReservationWPF
             BeginDate.SelectedDate = DateTime.Now;
             Request req = new Request(new DateTime(2016, 7, 23, 10, 0, 0), 30);
             List<Room> l = rm.GetListOfRecommendedRooms(req);
-            if (l.Count > 0)
+            if (l.Count > 0)  //this check if a room can be booked and "unbooked"
             {
                 rm.BookRoom(l[0].RoomID, req.Occupation);
             }
@@ -96,7 +96,7 @@ namespace RoomReservationWPF
                 });
 
             listView1.View = gridView;
-            listView1.ItemsSource = rm.ListOfRooms;
+            listView1.ItemsSource = null; // rm.ListOfRooms;
 
 
             // Room r1 = new Room();
@@ -188,7 +188,7 @@ namespace RoomReservationWPF
                );
             List<Room> recommendedRooms = rm.GetListOfRecommendedRooms(req);
 
-            recommendedRooms = recommendedRooms.OrderBy(r => -r.ScoreCompatible(req)).ToList();
+            recommendedRooms = recommendedRooms.OrderBy(r => r.ScoreCompatible(req)).Reverse().ToList();
             listView1.ItemsSource = recommendedRooms;
 
             //System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", value)); 
@@ -202,8 +202,11 @@ namespace RoomReservationWPF
         }
         private void MySelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", e.AddedItems[0]));
-            //Debug.WriteLine("Selected: {0}", e.AddedItems[0]);
+            if (e.AddedItems.Count > 0)
+            {
+                System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", e.AddedItems[0]));
+                //Debug.WriteLine("Selected: {0}", e.AddedItems[0]);
+            }
         }
         private void createRoom_Click(object sender, RoutedEventArgs e)
         {

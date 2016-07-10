@@ -10,7 +10,7 @@ namespace RoomReservationWPF.Models
     public class RoomManager
     {
         // private Dictionary<int, Room> rooms;
-        private List<Room> listOfRooms;
+        private IList<Room> listOfRooms;
         private Dictionary<int, HashSet<Timeslot>> roomSchedule; //int is roomId
         //private Dictionary<int, SortedSet<Timeslot>> roomSchedule_test;
 
@@ -30,7 +30,7 @@ namespace RoomReservationWPF.Models
         {
             // FileName = @"C:\Users\DerKaiser\Desktop\project GUi\RoomReservation\RoomReservationWPF\RoomData.csv";
             var csvlines = File.ReadAllLines(FileName);
-            IEnumerable<Room> csv = from line in File.ReadAllLines(FileName).Skip(1) //without first line
+            IEnumerable<Room> csv = from line in File.ReadAllLines(FileName).Skip(1) //ignore first line
                                     select new Room(line);
 
             listOfRooms = new List<Room>(csv);
@@ -59,7 +59,7 @@ namespace RoomReservationWPF.Models
             List<Room> result = new List<Room>();
             foreach (Room room in listOfRooms)
             {
-                if (isRoomAvailable(room.RoomID, request.Occupation))// && room.IsCompatible(request))
+                if (isRoomAvailable(room.RoomID, request.Occupation))// && room.IsCompatible(request)) 
                 {
                     result.Add(room);
                 }
@@ -111,7 +111,7 @@ namespace RoomReservationWPF.Models
             listOfRooms.Add(room);
             roomSchedule.Add(room.RoomID, new HashSet<Timeslot>());
         }
-        public List<Room> ListOfRooms
+        public IList<Room> ListOfRooms
         {
             get
             {

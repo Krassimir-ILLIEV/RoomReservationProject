@@ -20,7 +20,7 @@
         private const int MaxFloor = 13;
 
         private static int roomIdGenerator = 1;
-        private readonly int roomID;
+        private int roomID;
         private int capacity;
         private int floor;
         private List<MultimediaDevice> listMultimedia;
@@ -66,7 +66,7 @@
             this.RentPriceRangeTypeProp = RentPriceRangeType;
             this.RentPricePerHour = rentPricePerHour;
             this.Location = location;
-           this.RoomID = roomIdGenerator++;
+            this.RoomID = roomIdGenerator++;
         }
         public Room(string csvStr)
         {
@@ -88,21 +88,24 @@
         {
             RoomInit(capacity, floor, listMultimedia, roomType, capacityRange, rentPriceRange, rentPricePerHour, location);
         }
-        public decimal CalculatedPrice //depend on duration
+        public decimal CalculatedPrice //depends on duration
         {
             get
             {
                 return this.RentPricePerHour * (decimal)(MainWindow.EventDuration / 60.0);
             }
         }
-        public string CalculatedMedia //depend on choice
+        public string CalculatedMedia //depends on choice
         {
             get
             {
                 return (this.isMultimediaAvailable(MainWindow.MMDType) ? "Yes" : "No");
             }
         }
-        public int roomId { get; private set; }
+        public int RoomID { 
+            get { return this.roomID; }
+            private set {this.roomID = value; }
+        }
 
         public CapacityRangeType CapacityRange { get; set; }
 
@@ -143,7 +146,7 @@
             }
             return str + "]";
         }
-        
+
         public List<MultimediaDevice> ListMultimedia
         {
             get
@@ -206,13 +209,12 @@
             }
         }
 
-        public int RoomID { get; private set; }
-
+      
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(base.ToString());
-            sb.AppendLine(string.Format("Room ID: {0}", this.roomId));
+            sb.AppendLine(string.Format("Room ID: {0}", this.roomID));
             sb.AppendLine(string.Format("Capacity: {0}", this.Capacity));
             sb.AppendLine(string.Format("Floor: {0}", this.Floor));
             sb.AppendLine(string.Format("Multimedia: {0}", this.ListMultimedia));
@@ -287,7 +289,7 @@
         }
         public int Score
         {
-            get { return lastScore; }
+            get { return this.lastScore; }
         }
         /* roomId;
 - roomType (conference, cinema,etc, type Enum);
