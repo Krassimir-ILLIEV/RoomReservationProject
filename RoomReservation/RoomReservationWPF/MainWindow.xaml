@@ -17,7 +17,7 @@
                     <ColumnDefinition Width="79*"/>
                     <ColumnDefinition Width="274*"/>
                 </Grid.ColumnDefinitions>
-                <Button x:Name="searchBtn" Content="Search" Grid.Column="3" HorizontalAlignment="Left" Margin="168,453.4,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Row="1" Height="29"/>
+                <Button x:Name="searchBtn" Content="Search" Grid.Column="3" HorizontalAlignment="Left" Margin="168,453.4,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1" Height="29" Click="searchBtn_Click"/>
 
                 <Label Content="Type" HorizontalAlignment="Left" Height="37" Margin="32,110.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
                 <Label Content="Capacity" HorizontalAlignment="Left" Height="37" Margin="32,172.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="122" Grid.Column="1"/>
@@ -55,7 +55,7 @@
                 <Label Content="Room Property" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="32,80.4,0,0" Grid.Row="1" VerticalAlignment="Top" RenderTransformOrigin="0.303,-0.904"/>
                 <Label Content="Value" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="154,80.4,0,0" Grid.Row="1" VerticalAlignment="Top"/>
                 <Label Content="Priority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,80.4,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-                <ComboBox x:Name="capacityPriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,177.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="capacityPriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,177.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="Priority_SelectionChanged">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -64,7 +64,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ComboBox x:Name="typePriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,115.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="typePriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,115.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="Priority_SelectionChanged">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -73,7 +73,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ComboBox x:Name="pricePriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,146.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                <ComboBox x:Name="pricePriority" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="320,146.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" SelectionChanged="Priority_SelectionChanged">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -82,7 +82,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ComboBox x:Name="multimediaPriority" HorizontalAlignment="Left" Margin="320,208.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="1">
+                <ComboBox x:Name="multimediaPriority" HorizontalAlignment="Left" Margin="320,208.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120" Grid.Column="1" SelectionChanged="Priority_SelectionChanged">
                     <ComboBoxItem Tag="1" IsSelected="True">1</ComboBoxItem>
                     <ComboBoxItem Tag="2">2</ComboBoxItem>
                     <ComboBoxItem Tag="3">3</ComboBoxItem>
@@ -100,7 +100,7 @@
                     <ComboBoxItem Tag="6">6</ComboBoxItem>
                     <ComboBoxItem Tag="7">7</ComboBoxItem>
                 </ComboBox>
-                <ListView x:Name="listView1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="143" Margin="22,273.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="833" SelectionChanged="MySelectionChanged" >
+                <ListView x:Name="listView1" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="143" Margin="22,273.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="843" SelectionChanged="MySelectionChanged1" >
                     <ListView.View>
                         <GridView>
                             <GridViewColumn/>
@@ -109,10 +109,24 @@
                 </ListView>
                 <Label Content="Date Time" HorizontalAlignment="Left" Height="37" Margin="32,28,0,0" VerticalAlignment="Top" Width="122" Grid.Column="1" Grid.RowSpan="2"/>
                 <ComboBox x:Name="BeginTime" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="154,28,0,0" VerticalAlignment="Top" Width="120" Grid.RowSpan="2">
-                    <ComboBoxItem Tag="10:00" IsSelected="True" Content="10:00"/>
+                    <ComboBoxItem Tag="9:00" IsSelected="True" Content="9:00"/>
+                    <ComboBoxItem Tag="9:30" Content="9:30"/>
+                    <ComboBoxItem Tag="10:00" Content="10:00"/>
+                    <ComboBoxItem Tag="10:30" Content="10:30"/>
+                    <ComboBoxItem Tag="11:00" Content="11:00"/>
+                    <ComboBoxItem Tag="11:30" Content="11:30"/>
                     <ComboBoxItem Tag="12:00" Content="12:00"/>
+                    <ComboBoxItem Tag="12:30" Content="12:30"/>
+                    <ComboBoxItem Tag="13:00" Content="13:00"/>
+                    <ComboBoxItem Tag="13:30" Content="13:30"/>
                     <ComboBoxItem Tag="14:00" Content="14:00"/>
+                    <ComboBoxItem Tag="14:30" Content="14:30"/>
+                    <ComboBoxItem Tag="15:00" Content="15:00"/>
+                    <ComboBoxItem Tag="15:30" Content="15:30"/>
                     <ComboBoxItem Tag="16:00" Content="16:00"/>
+                    <ComboBoxItem Tag="16:30" Content="16:30"/>
+                    <ComboBoxItem Tag="17:00" Content="17:00"/>
+                    <ComboBoxItem Tag="17:30" Content="17:30"/>
                     <ComboBoxItem Tag="18:00" Content="18:00"/>
                 </ComboBox>
                 <DatePicker x:Name="BeginDate" Height="25" HorizontalAlignment="Left" Margin="320,28,0,0" VerticalAlignment="Top" Width="120" Grid.Column="1" Grid.RowSpan="2"  />
@@ -124,6 +138,14 @@
                     <ComboBoxItem Tag="3" Content="Type 3"/>
                     <ComboBoxItem Tag="4" Content="Type 4"/>
                 </ComboBox>
+                <ListView x:Name="listView2" Grid.ColumnSpan="4" HorizontalAlignment="Left" Height="253" Margin="476,0.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="389" SelectionChanged="MySelectionChanged2" >
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button x:Name="serBtn" Content="Serialization Test" Grid.Column="1" HorizontalAlignment="Left" Margin="32,453.4,0,0" VerticalAlignment="Top" Width="168" Grid.Row="1" Height="29" Click="serBtn_Click"/>
 
 
 

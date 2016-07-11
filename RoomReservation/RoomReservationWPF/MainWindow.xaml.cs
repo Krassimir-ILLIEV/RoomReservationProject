@@ -30,6 +30,7 @@ namespace RoomReservationWPF
         private RoomManager rm;
         public static int EventDuration = 0;
         public static MultimediaType MMDType = (MultimediaType)0;
+        private static Request req;
         public MainWindow()
         {
             InitializeComponent();
@@ -37,22 +38,23 @@ namespace RoomReservationWPF
             //rm = new RoomManager(@"C:\Users\DerKaiser\Desktop\project GUi\RoomReservation\RoomReservationWPF\RoomData.csv");
             rm = new RoomManager(@"../../RoomData.csv");
             BeginDate.SelectedDate = DateTime.Now;
-            Request req = new Request(new DateTime(2016, 7, 23, 10, 0, 0), 30);
-            List<Room> l = rm.GetListOfRecommendedRooms(req);
-            if (l.Count > 0)  //this check if a room can be booked and "unbooked"
-            {
-                rm.BookRoom(l[0].RoomID, req.Occupation);
-            }
-            l = rm.GetListOfRecommendedRooms(req);
-            rm.CancelReservation(1, req.Occupation.BeginTime);
-            l = rm.GetListOfRecommendedRooms(req);
-
+            /* tests
+             Request req = new Request(new DateTime(2016, 7, 23, 10, 0, 0), 30);
+             List<Room> recommendedRooms = rm.GetListOfRecommendedRooms(req);
+             if (recommendedRooms.Count > 0)  //this check if a room can be booked and "unbooked"
+             {
+                 rm.BookRoom(recommendedRooms[0].RoomID, req.Occupation);
+             }
+             recommendedRooms = rm.GetListOfRecommendedRooms(req);
+             rm.CancelReservation(1, req.Occupation.BeginTime);
+             recommendedRooms = rm.GetListOfRecommendedRooms(req);
+             */
 
 
 
             GridView gridView = new GridView();
 
-            gridView.Columns.Add(
+            gridView.Columns.Add(  //many structures
                 new GridViewColumn
                 {
                     DisplayMemberBinding = new System.Windows.Data.Binding("RoomID"),
@@ -96,12 +98,27 @@ namespace RoomReservationWPF
                 });
 
             listView1.View = gridView;
-            listView1.ItemsSource = null; // rm.ListOfRooms;
+            listView1.ItemsSource = null; // rm.ListOfRooms; null so that nothing is displayed initially
 
+            GridView gridView2 = new GridView();
 
-            // Room r1 = new Room();
-            // Trace.WriteLine("-----");
+            gridView2.Columns.Add(
+                new GridViewColumn
+                {
+                    DisplayMemberBinding = new System.Windows.Data.Binding("RoomID"),
+                    Header = " Id ",
+                    Width = double.NaN
+                });
+            gridView2.Columns.Add(
+                 new GridViewColumn
+                {
+                    DisplayMemberBinding = new System.Windows.Data.Binding("Timing"),
+                    Header = " Timing ",
+                    Width = double.NaN
+                });
 
+            listView2.View = gridView2;
+            listView2.ItemsSource = null; // rm.GetSchedules();
 
         }
 
@@ -129,7 +146,7 @@ namespace RoomReservationWPF
         {
 
         }
-        private void CleadListViev()
+        private void ClearListView()
         {
             if (listView1 != null)
             {
@@ -137,30 +154,35 @@ namespace RoomReservationWPF
                 //listView1.Items.Clear();
             }
         }
+        private void Priority_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            ClearListView();
+        }
         private void Duration_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             EventDuration = int.Parse(((ComboBoxItem)Duration.SelectedItem).Tag.ToString());
-            CleadListViev();
+            ClearListView();
         }
         private void TypeBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            CleadListViev();
+            ClearListView();
         }
         private void PriceRangeBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            CleadListViev();
+            ClearListView();
         }
         private void CapacityRangeBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            CleadListViev();
+            ClearListView();
         }
         private void MultimediaBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             MMDType = ClassGeneral.GetEnumByName<MultimediaType>(((ComboBoxItem)MultimediaBox.SelectedItem).Tag.ToString());
-            CleadListViev();
+            ClearListView();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void searchBtn_Click(object sender, RoutedEventArgs e)
         {
+            string path = System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
             //ComboBoxItem cbi = (ComboBoxItem)TimeRangeBox.SelectedItem;
 
             //TextBlock1.Text = cbi.ToString() + ";" + TimeRangeBox.Text;
@@ -179,7 +201,7 @@ namespace RoomReservationWPF
 
             DateTime beginDateTime = new DateTime(beginDate.Year, beginDate.Month, beginDate.Day, int.Parse(beginTime.Split(':')[0]), int.Parse(beginTime.Split(':')[1]), 0);
 
-            Request req = new Request(beginDateTime, int.Parse(duration),
+            req = new Request(beginDateTime, int.Parse(duration),
                ClassGeneral.GetEnumByName<RoomType>(typeBox),
                ClassGeneral.GetEnumByName<RentPriceRangeType>(priceRangeBox),
                ClassGeneral.GetEnumByName<CapacityRangeType>(capacityRangeBox),
@@ -197,19 +219,54 @@ namespace RoomReservationWPF
             //Employee employee = new Employee("Name1", "Title1", null,"Team1");
             //TestClass.WriteToBinaryFile<Employee>(employee, "../../Test.bin");
             //Employee employee1 = TestClass.ReadFromBinaryFile<Employee>("../../Test.bin");
+            //Form wr = System.Windows.Forms.Application.
 
 
         }
-        private void MySelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MySelectionChanged1(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count > 0)
             {
-                System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", e.AddedItems[0]));
+                bool[] isBooked = { false };// new int[1];
+                Room SelectedRoom = (Room)e.AddedItems[0];
+                WindowRoom windowRoom = new WindowRoom(SelectedRoom, isBooked);
+                windowRoom.Owner = this;
+                windowRoom.ShowDialog();
+                windowRoom = null;
+                //System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", arrint[0]));
+                if (isBooked[0])
+                {
+                    rm.BookRoom(SelectedRoom.RoomID, req.Occupation);
+                    ClearListView();
+                    listView2.ItemsSource = rm.GetSchedules();
+                }
+                //System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", e.AddedItems[0]));
                 //Debug.WriteLine("Selected: {0}", e.AddedItems[0]);
             }
         }
+        private void MySelectionChanged2(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.AddedItems.Count > 0)
+            {
+                if (MessageBoxResult.Yes == System.Windows.MessageBox.Show("Do you want to Cancel the booking?", "Confirmation", MessageBoxButton.YesNo))
+                {
+
+                Scheduler SelectedScheduler = (Scheduler)(e.AddedItems[0]);
+                rm.CancelReservation(SelectedScheduler.RoomID, SelectedScheduler.BeginTime);
+                listView2.ItemsSource = rm.GetSchedules();
+                //System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", e.AddedItems[0]));
+                //Debug.WriteLine("Selected: {0}", e.AddedItems[0]);
+            }}
+        }
         private void createRoom_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+        private void serBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ClassGeneral.WriteToBinaryFile<RoomManager>(rm, @"../../RoomMng.bin");
+            rm = null;
+            rm=ClassGeneral.ReadFromBinaryFile<RoomManager>(@"../../RoomMng.bin");
 
         }
 

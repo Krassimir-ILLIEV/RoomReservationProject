@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RoomReservationWPF.Common.ClassGeneral" Collapsed="true">
+    <Position X="9" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAEAEEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ClassGeneral.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservation.Controllers.TestController" Collapsed="true">
+    <Position X="12.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\TestController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Exceptions.DateExceptions" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Exceptions\DateExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Exceptions.MultimediaExceptions" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAIAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\MultimediaExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Exceptions.PricesException" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\PricesException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Exceptions.RoomExceptions" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\RoomExceptions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservation.Models.Building" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAIAAAAAAAABAgEAAgIAAAIAAABQAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Models\Building.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservation.Models.Coordinates" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAEAAAAAAAAAIAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Coordinates.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.CEO" Collapsed="true">
+    <Position X="5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employees\CEO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.CFO" Collapsed="true">
+    <Position X="7.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employees\CFO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.CIO" Collapsed="true">
+    <Position X="9.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employees\CIO.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.DepartmentManager" Collapsed="true">
+    <Position X="7.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAwEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employees\DepartmentManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.Employee" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAgAAAQAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employees\Employee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.Intern" Collapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAEAAAAAAAgAAAAAAAACAAAAAACAAA=</HashCode>
+      <FileName>Models\Employees\Intern.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.Manager" Collapsed="true">
+    <Position X="7.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAgAAAAgAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Models\Employees\Manager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.RegularEmployee" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAQAAAAEAUAABAAAQgAAAEAAAAEAAQAAAAAAA=</HashCode>
+      <FileName>Models\Employees\RegularEmployee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Employees.UnitManager" Collapsed="true">
+    <Position X="7.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAEIAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Employees\UnitManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Location" Collapsed="true">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Location.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Models.MultimediaDevice" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIgAAAAAAAAgAEAAAAADAgAAAQAABAAAgAgAAICIA=</HashCode>
+      <FileName>Models\MultimediaDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.OrganizedEvent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrganizedEvent.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Request" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAQAghAAIIIAoACABYAAAAACQBEAAAAQgA=</HashCode>
+      <FileName>Models\Request.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Room" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAIACCIABQAggEQKKIAggiAAIgAAAACADAAIAEQgA=</HashCode>
+      <FileName>Models\Room.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoomReservationWPF.Models.RoomManager" Collapsed="true">
+    <Position X="14.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAhQAIAIgAABAACQAAQgAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Models\RoomManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Scheduler" Collapsed="true">
+    <Position X="9" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACQAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAA=</HashCode>
+      <FileName>Models\Scheduler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.Models.Timeslot" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAQAAAAAIAAAAABAAgAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Models\TimeSlot.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoomReservationWPF.MainWindow" Collapsed="true">
+    <Position X="14.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAgAAAgAAACAAAAAAoEAAEQQAACQgAAAAACWEIAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.WindowRoom" Collapsed="true">
+    <Position X="16" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAkAAAAAAAAAAAAAAQAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WindowRoom.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoomReservationWPF.App" Collapsed="true">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RoomReservationWPF.Contracts.IRegularEmployee" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAUAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IRegularEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoomReservationWPF.Contracts.IRequest" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Contracts\IRequest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoomReservationWPF.Contracts.IRoom" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAQAAgAAIIAAgACAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Contracts\IRoom.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="RoomReservationWPF.Common.BuildingLocationType" Collapsed="true">
+    <Position X="9" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAEAAAAAAAAAgAAAAAAAAAAAAAABAAAAEAAA=</HashCode>
+      <FileName>Common\BuildingLocationType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoomReservationWPF.Common.BuildingType" Collapsed="true">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAACAABAA=</HashCode>
+      <FileName>Common\BuildingType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoomReservationWPF.Common.CapacityRangeType" Collapsed="true">
+    <Position X="12.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAgIAAAAAAAAAAAAAAAACACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\CapacityRangeType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoomReservationWPF.Common.EmployeePriorityType" Collapsed="true">
+    <Position X="9" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAACAgAAAAAACAgAAAAAAAAAAAgEAAA=</HashCode>
+      <FileName>Common\EmployeePriorityType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoomReservationWPF.Common.MultimediaType" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAgIAAAAAAAAAgEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\MultimediaType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoomReservationWPF.Common.RentPriceRangeType" Collapsed="true">
+    <Position X="12.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAgAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\RentPriceRangeType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RoomReservationWPF.Common.RoomType" Collapsed="true">
+    <Position X="9" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAABEAAAAAAAAAgAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Common\RoomType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

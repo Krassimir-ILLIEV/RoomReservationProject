@@ -24,9 +24,7 @@
         private int capacity;
         private int floor;
         private List<MultimediaDevice> listMultimedia;
-        private RoomType roomType;
         private CapacityRangeType capacityRange;
-        private RentPriceRangeType rentPriceRangeType;
         private decimal rentPricePerHour;
         private Location location;
         private int lastScore;
@@ -36,11 +34,14 @@
             this.rentPricePerHour = (decimal)info.GetValue("rentPricePerHour", typeof(decimal));
             this.capacity = (int)info.GetValue("capacity", typeof(int));
             this.floor = (int)info.GetValue("floor", typeof(int));
-            this.roomType = (RoomType)info.GetValue("roomType", typeof(RoomType));
+            this.RoomTypeProp = (RoomType)info.GetValue("RoomTypeProp", typeof(RoomType));
             this.capacityRange = (CapacityRangeType)info.GetValue("capacityRange", typeof(CapacityRangeType));
-            this.rentPriceRangeType = (RentPriceRangeType)info.GetValue("rentPriceRangeType", typeof(RentPriceRangeType));
+            this.RentPriceRangeTypeProp = (RentPriceRangeType)info.GetValue("RentPriceRangeTypeProp", typeof(RentPriceRangeType));
             //this.listMultimedia = new List<MultimediaDevice>();
             this.listMultimedia = (List<MultimediaDevice>)info.GetValue("listMultimedia", typeof(List<MultimediaDevice>));
+            this.PicturePath = (string)info.GetValue("PicturePath", typeof(string));
+            this.RoomID = (int)info.GetValue("RoomID", typeof(int));
+            roomIdGenerator = (int)info.GetValue("roomIdGenerator", typeof(int));
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -48,15 +49,18 @@
             info.AddValue("rentPricePerHour", this.rentPricePerHour, typeof(decimal));
             info.AddValue("capacity", this.capacity, typeof(int));
             info.AddValue("floor", this.floor, typeof(int));
-            info.AddValue("roomType", this.roomType, typeof(RoomType));
+            info.AddValue("RoomTypeProp", this.RoomTypeProp, typeof(RoomType));
             info.AddValue("capacityRange", this.capacityRange, typeof(CapacityRangeType));
-            info.AddValue("rentPriceRangeType", this.rentPriceRangeType, typeof(RentPriceRangeType));
+            info.AddValue("RentPriceRangeTypeProp", this.RentPriceRangeTypeProp, typeof(RentPriceRangeType));
             info.AddValue("listMultimedia", this.listMultimedia, typeof(List<MultimediaDevice>));
+            info.AddValue("PicturePath", this.PicturePath, typeof(string));
+            info.AddValue("RoomID", this.RoomID, typeof(int));
+            info.AddValue("roomIdGenerator", roomIdGenerator, typeof(int));
         }
 
         private void RoomInit(int capacity, int floor, List<MultimediaDevice> listMultimedia,
         RoomType roomType, CapacityRangeType capacityRange, RentPriceRangeType RentPriceRangeType,
-        decimal rentPricePerHour, Location location)
+        decimal rentPricePerHour, Location location, string picturePath = "")
         {
             this.Capacity = capacity;
             this.Floor = floor;
@@ -66,6 +70,7 @@
             this.RentPriceRangeTypeProp = RentPriceRangeType;
             this.RentPricePerHour = rentPricePerHour;
             this.Location = location;
+            this.PicturePath = picturePath;
             this.RoomID = roomIdGenerator++;
         }
         public Room(string csvStr)
@@ -79,7 +84,7 @@
 
             RoomInit(int.Parse(RoomData[0]), int.Parse(RoomData[1]), MultimediaDevice.createListMMD(temp[1]),
             eRoomType, eCapacityRange, eRentPriceRangeType,
-            decimal.Parse(RoomData[5]), new Location());
+            decimal.Parse(RoomData[5]), new Location(), RoomData[7]);
         }
 
         public Room(int capacity, int floor, List<MultimediaDevice> listMultimedia,
@@ -102,9 +107,10 @@
                 return (this.isMultimediaAvailable(MainWindow.MMDType) ? "Yes" : "No");
             }
         }
-        public int RoomID { 
+        public int RoomID
+        {
             get { return this.roomID; }
-            private set {this.roomID = value; }
+            private set { this.roomID = value; }
         }
 
         public CapacityRangeType CapacityRange { get; set; }
@@ -208,8 +214,8 @@
                 this.location = value;
             }
         }
+        public string PicturePath { get; set; }
 
-      
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

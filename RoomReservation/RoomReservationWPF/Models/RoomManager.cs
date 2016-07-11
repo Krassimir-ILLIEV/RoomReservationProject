@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-
-namespace RoomReservationWPF.Models
+﻿namespace RoomReservationWPF.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.IO;
+    using System.Threading.Tasks;
+    using System.Runtime.Serialization;
+
+    [Serializable]
     public class RoomManager
     {
         // private Dictionary<int, Room> rooms;
@@ -26,8 +28,7 @@ namespace RoomReservationWPF.Models
             //roomSchedule_test = new Dictionary<int, SortedSet<Timeslot>>();
         }
         public RoomManager(string FileName)
-            : base()
-        {
+         {
             // FileName = @"C:\Users\DerKaiser\Desktop\project GUi\RoomReservation\RoomReservationWPF\RoomData.csv";
             var csvlines = File.ReadAllLines(FileName);
             IEnumerable<Room> csv = from line in File.ReadAllLines(FileName).Skip(1) //ignore first line
@@ -39,6 +40,16 @@ namespace RoomReservationWPF.Models
             {
                 roomSchedule.Add(room.RoomID, new HashSet<Timeslot>());
             }
+        }
+        public RoomManager(SerializationInfo info, StreamingContext context)
+        {
+            this.listOfRooms = (List<Room>)info.GetValue("listOfRooms", typeof(List<Room>));
+            this.roomSchedule = (Dictionary<int, HashSet<Timeslot>>)info.GetValue("roomSchedule", typeof(Dictionary<int, HashSet<Timeslot>>));
+        }
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            info.AddValue("listOfRooms", this.listOfRooms, typeof(List<Room>));
+            info.AddValue("roomSchedule", this.roomSchedule, typeof(Dictionary<int, HashSet<Timeslot>>));
         }
         private bool isRoomAvailable(int RoomID, Timeslot ocuppation)
         {
@@ -102,7 +113,7 @@ namespace RoomReservationWPF.Models
 
         public void CancelReservation(int RoomID, DateTime eventMoment)
         {
-            roomSchedule[RoomID].RemoveWhere(s => s.IsThereConflict(new Timeslot(eventMoment, 0)));
+            roomSchedule[RoomID].RemoveWhere(s => s.IsThereConflict(new Timeslot(eventMoment, 1)));
         }
 
         public void AddNewRoom(Room room)
@@ -134,6 +145,18 @@ namespace RoomReservationWPF.Models
             }
 
             return timeslotResult.ToString();
+        }
+        public List<Scheduler> GetSchedules()
+        {
+            List<Scheduler> result = new List<Scheduler>();
+            foreach (KeyValuePair<int, HashSet<Timeslot>> item in roomSchedule)
+            {
+                foreach (Timeslot timeslot in item.Value)
+                {
+                    result.Add(new Scheduler(item.Key, timeslot));
+                }
+            }
+            return result.OrderBy(s => s.Timing).ToList();
         }
 
         //ADD GET OPTIMAL ROOM BASED ON ALL EVENT ATTENDEES' LOCATIONS AND THEIR RELATIVE WEIGHT 
