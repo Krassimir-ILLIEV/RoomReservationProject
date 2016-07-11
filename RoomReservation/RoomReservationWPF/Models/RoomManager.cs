@@ -8,6 +8,11 @@
 
     public class RoomManager
     {
+        private const string FileName = @"../../RoomData.csv";
+
+        private static RoomManager instance;
+        private static readonly object padlock = new object();
+
         // private Dictionary<int, Room> rooms;
         private IList<Room> listOfRooms;
         private Dictionary<int, HashSet<Timeslot>> roomSchedule; //int is roomId
@@ -16,14 +21,30 @@
         //SORTED SET<t> SORTED BY TIMESLOT begintime is better
 
         //private Scheduler scheduler;
-
-        public RoomManager()
+        private RoomManager()
         {
             listOfRooms = new List<Room>();
             roomSchedule = new Dictionary<int, HashSet<Timeslot>>();
-            //or hashtable<timeslot,beginTime>
-            //roomSchedule_test = new Dictionary<int, SortedSet<Timeslot>>();
+            var csvlines = File.ReadAllLines(FileName);
+            IEnumerable<Room> csv = from line in File.ReadAllLines(FileName).Skip(1) //ignore first line
+                                    select new Room(line);
+
+            listOfRooms = new List<Room>(csv);
+            roomSchedule = new Dictionary<int, HashSet<Timeslot>>();
+            foreach (Room room in listOfRooms)
+            {
+                roomSchedule.Add(room.RoomID, new HashSet<Timeslot>());
+            }
         }
+
+        //public RoomManager()
+        //{
+        //    listOfRooms = new List<Room>();
+        //    roomSchedule = new Dictionary<int, HashSet<Timeslot>>();
+        //    //or hashtable<timeslot,beginTime>
+        //    //roomSchedule_test = new Dictionary<int, SortedSet<Timeslot>>();
+        //}
+
         public RoomManager(string FileName)
             : base()
         {
@@ -39,6 +60,26 @@
                 roomSchedule.Add(room.RoomID, new HashSet<Timeslot>());
             }
         }
+
+        public static RoomManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (padlock)
+                    {
+                        if (instance == null)
+                        {
+                            instance = new RoomManager();
+                        }
+                    }
+                }
+
+                return instance;
+            }
+        }
+
         private bool isRoomAvailable(int RoomID, Timeslot ocuppation)
         {
             bool result = true;

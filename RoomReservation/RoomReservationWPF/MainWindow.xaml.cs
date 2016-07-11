@@ -25,7 +25,8 @@
 
             // TestClass.TestXMLSerialization();
             // rm = new RoomManager(@"C:\Users\DerKaiser\Desktop\project GUi\RoomReservation\RoomReservationWPF\RoomData.csv");
-            rm = new RoomManager(@"../../RoomData.csv");
+            //rm = new RoomManager(@"../../RoomData.csv");
+            rm = RoomManager.Instance;
             BeginDate.SelectedDate = DateTime.Now;
             Request req = new Request(new DateTime(2016, 7, 23, 10, 0, 0), 30);
             List<Room> l = rm.GetListOfRecommendedRooms(req);
