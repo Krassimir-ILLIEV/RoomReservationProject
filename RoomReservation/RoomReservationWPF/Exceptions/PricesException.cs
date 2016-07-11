@@ -7,16 +7,8 @@
         // Fields
 
         // Constructors
-        public PricesException(string message, int price) : base(message)
+        public PricesException(string message) : base(message)
             {
-            this.Price = price;
             }
-
-        // Properties
-        public int Price
-        {
-            get;
-            private set;
-        }
     }
 }

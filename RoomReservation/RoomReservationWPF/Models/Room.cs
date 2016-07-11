@@ -68,6 +68,7 @@
             this.Location = location;
             this.RoomID = roomIdGenerator++;
         }
+
         public Room(string csvStr)
         {
             string[] temp = csvStr.Split(new[] { '[', ']' });
@@ -77,7 +78,9 @@
             CapacityRangeType eCapacityRange = ClassGeneral.GetEnumByName<CapacityRangeType>(RoomData[3]);
             RentPriceRangeType eRentPriceRangeType = ClassGeneral.GetEnumByName<RentPriceRangeType>(RoomData[4]);
 
-            RoomInit(int.Parse(RoomData[0]), int.Parse(RoomData[1]), MultimediaDevice.createListMMD(temp[1]),
+            RoomInit(int.Parse(RoomData[0]),
+                int.Parse(RoomData[1]),
+                MultimediaDevice.createListMMD(temp[1]),
             eRoomType, eCapacityRange, eRentPriceRangeType,
             decimal.Parse(RoomData[5]), new Location());
         }
@@ -88,6 +91,7 @@
         {
             RoomInit(capacity, floor, listMultimedia, roomType, capacityRange, rentPriceRange, rentPricePerHour, location);
         }
+
         public decimal CalculatedPrice //depends on duration
         {
             get
@@ -95,6 +99,7 @@
                 return this.RentPricePerHour * (decimal)(MainWindow.EventDuration / 60.0);
             }
         }
+
         public string CalculatedMedia //depends on choice
         {
             get
@@ -102,6 +107,7 @@
                 return (this.isMultimediaAvailable(MainWindow.MMDType) ? "Yes" : "No");
             }
         }
+
         public int RoomID { 
             get { return this.roomID; }
             private set {this.roomID = value; }
@@ -122,11 +128,11 @@
             {
                 if (value < MinCapacity)
                 {
-                    throw new RoomExceptions("Capacity must be equal or more then {0}", MinCapacity);
+                    throw new RoomExceptions(string.Format("Capacity must be equal or more then {0}", MinCapacity));
                 }
                 else if (value > MaxCapacity)
                 {
-                    throw new RoomExceptions("Capacity must be less than {0}", MaxCapacity);
+                    throw new RoomExceptions(string.Format("Capacity must be less than {0}", MaxCapacity));
                 }
 
                 this.capacity = value;
@@ -180,11 +186,11 @@
             {
                 if (value < MinFloor)
                 {
-                    throw new RoomExceptions("Floor must be greater then {0}", MinFloor);
+                    throw new RoomExceptions(string.Format("Floor must be greater then {0}", MinFloor));
                 }
                 else if (value > MaxFloor)
                 {
-                    throw new RoomExceptions("Floor must be smaller then {0}", MaxFloor);
+                    throw new RoomExceptions(string.Format("Floor must be smaller then {0}", MaxFloor));
                 }
 
                 this.floor = value;
@@ -225,6 +231,7 @@
             sb.AppendLine(string.Format("Location: {0}", this.Location));
             return sb.ToString();
         }
+
         private bool isMultimediaAvailable(MultimediaType multimediaType)
         {
             if (this.ListMultimedia != null)
@@ -236,6 +243,7 @@
             }
             return false;
         }
+
         public bool IsCompatible(Request request)
         {
             bool result = false;
@@ -243,6 +251,7 @@
             {
                 return result;
             }
+
             if (request.RentPriceRangeTypeProp != RentPriceRangeType.not_selected)
             {
                 if ((double)this.RentPricePerHour * request.Occupation.DurationMin / 60.0 > (int)request.RentPriceRangeTypeProp)
@@ -250,10 +259,12 @@
                     return result;
                 }
             }
+
             if (request.CapacityRange != CapacityRangeType.not_selected && this.CapacityRange < request.CapacityRange)
             {
                 return result;
             }
+
             if (request.MultimediaTypeProp != MultimediaType.not_selected && !isMultimediaAvailable(request.MultimediaTypeProp))
             {
                 return result;
@@ -268,6 +279,7 @@
             {
                 result += request.RoomTypePriority;
             }
+
             if (request.RentPriceRangeTypeProp != RentPriceRangeType.not_selected)
             {
                 if ((double)this.RentPricePerHour * request.Occupation.DurationMin / 60.0 <= (int)request.RentPriceRangeTypeProp)
@@ -275,22 +287,27 @@
                     result += request.RentPriceRangePriority;
                 }
             }
+
             if (request.CapacityRange != CapacityRangeType.not_selected && this.CapacityRange > request.CapacityRange)
             {
                 result += request.CapacityRangePriority;
             }
+
             if (request.MultimediaTypeProp != MultimediaType.not_selected && isMultimediaAvailable(request.MultimediaTypeProp))
             {
                 result += request.MultimediaTypePriority;
 
             }
+
             lastScore = result;
             return result;
         }
+
         public int Score
         {
             get { return this.lastScore; }
         }
+
         /* roomId;
 - roomType (conference, cinema,etc, type Enum);
 - capacity (in terms of people);

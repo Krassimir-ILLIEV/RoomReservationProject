@@ -33,6 +33,5 @@
                 return EmployeePriorityType.UltraHigh;
             }
         }
-
     }
 }

@@ -26,7 +26,7 @@
         }
 
         public Employee(string csvStr)
-            :base(csvStr)
+            : base(csvStr)
         {
             string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             this.Team = data[3];
@@ -38,6 +38,7 @@
             {
                 return this.team;
             }
+
             private set
             {
                 if (string.IsNullOrEmpty(value))

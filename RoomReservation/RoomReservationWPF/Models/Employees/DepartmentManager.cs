@@ -25,7 +25,7 @@
         }
 
         public DepartmentManager(string csvStr)
-            :base(csvStr)
+            : base(csvStr)
         {
             string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             this.Department = data[5];
@@ -45,6 +45,7 @@
             {
                 return this.department;
             }
+
             private set
             {
                 if (string.IsNullOrEmpty(value))

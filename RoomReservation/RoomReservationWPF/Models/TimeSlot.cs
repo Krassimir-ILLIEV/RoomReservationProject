@@ -12,7 +12,6 @@
     [Serializable]
     public class Timeslot : ISerializable
     {
-
         public DateTime BeginTime { get; set; }
         public int DurationMin { get; set; }
         public OrganizedEvent organizedEvent { get; set; }
@@ -32,6 +31,7 @@
             info.AddValue("organizedEvent", this.organizedEvent, typeof(OrganizedEvent));
             info.AddValue("contactEmployee", this.contactEmployee, typeof(RegularEmployee));
         }
+
         public Timeslot(DateTime beginTime, int durationMin)
         {
             this.BeginTime = beginTime;

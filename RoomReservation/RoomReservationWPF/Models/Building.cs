@@ -16,7 +16,6 @@
 
         // Constructor
         public Building(
-            int buildingID,
         BuildingLocationType buildingLocation,
         BuildingType buildingType,
         int roomCount,

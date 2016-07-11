@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-
-namespace RoomReservationWPF.Models
+﻿namespace RoomReservationWPF.Models
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+
     public class RoomManager
     {
         // private Dictionary<int, Room> rooms;
@@ -80,8 +79,9 @@ namespace RoomReservationWPF.Models
                 foreach (Timeslot ts in pair.Value)
                 {
                     if (ts.IsThereConflict(timeslot))
-                    //if a timeslot can span several half hour periods
-                    //we will check if timeslot.begin time is b/n ts begin and end time 
+
+                    // if a timeslot can span several half hour periods
+                    // we will check if timeslot.begin time is b/n ts begin and end time 
                     {
                         isFree = false;
                         break;

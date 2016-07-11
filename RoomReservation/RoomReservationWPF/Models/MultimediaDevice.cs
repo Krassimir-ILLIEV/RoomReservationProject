@@ -94,7 +94,7 @@
             {
                 if (value < 0)
                 {
-                    throw new MultimediaExceptions("Brightness must be greater than {0}", defaultBrightness);
+                    throw new MultimediaExceptions(string.Format("Brightness must be greater than {0}", defaultBrightness));
                 }
 
                 this.brightness = value;
@@ -112,7 +112,7 @@
             {
                 if (value < 40 || value > 500)
                 {
-                    throw new MultimediaExceptions("Suported screen size should be between {0} and {1} inches", minScreenSize, maxScreenSize);
+                    throw new MultimediaExceptions(string.Format("Suported screen size should be between {0} and {1} inches", minScreenSize, maxScreenSize));
                 }
 
                 this.suportedScreenSize = value;

@@ -28,7 +28,7 @@
         }
 
         public Intern(string csvStr)
-            :base(csvStr)
+            : base(csvStr)
         {
             string[] data = csvStr.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
             this.InternshipPeriodInMonths = int.Parse(data[3]);
@@ -53,7 +53,7 @@
             {
                 if (value < minPeriod || value > maxPeriod)
                 {
-                    throw new DateExceptions("The internship period should be between {0} and {1} months.", minPeriod, maxPeriod);
+                    throw new DateExceptions(string.Format("The internship period should be between {0} and {1} months.", minPeriod, maxPeriod));
                 }
 
                 this.internshipPeriodInMonths = value;

@@ -1,7 +1,8 @@
 ﻿namespace RoomReservationWPF.Contracts
 {
     using System.Collections.Generic;
-    //using RoomReservation.Models;
+
+    // using RoomReservation.Models;
     using RoomReservationWPF.Common;
     using RoomReservationWPF.Models;
 
