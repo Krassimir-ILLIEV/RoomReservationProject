@@ -8,7 +8,7 @@
     using RoomReservationWPF.Contracts;
 
     [Serializable]
-    public class CIO : DepartmentManager, IRegularEmployee, ISerializable
+    public class CIO : ChiefOfficer, IRegularEmployee, ISerializable
     {
         public CIO(string name, string title, Location location, int yearsOfExperience, string unit, string department)
             : base(name, title, location, yearsOfExperience, unit, department)
@@ -25,13 +25,5 @@
         {
         }
 
-        // additional property
-        public override EmployeePriorityType Priority
-        {
-            get
-            {
-                return EmployeePriorityType.UltraHigh;
-            }
-        }
     }
 }

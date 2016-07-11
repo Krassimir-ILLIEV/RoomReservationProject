@@ -72,6 +72,7 @@
     <Compile Include="Models\Building.cs" />
     <Compile Include="Models\Employees\CEO.cs" />
     <Compile Include="Models\Employees\CFO.cs" />
+    <Compile Include="Models\Employees\ChiefOfficer.cs" />
     <Compile Include="Models\Employees\CIO.cs" />
     <Compile Include="Models\Coordinates.cs" />
     <Compile Include="Common\RoomType.cs" />
