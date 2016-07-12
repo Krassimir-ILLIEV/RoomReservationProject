@@ -2,8 +2,8 @@
 {
     public class Coordinates
     {
-        private double latitude;
-        private double longitude;
+        //private double latitude;
+        //private double longitude;
 
         public Coordinates(double latitude, double longitude)
         {
@@ -15,6 +15,6 @@
 
         public double Longitude { get; private set; }
 
-        // I am not sure how GeoCoordinate class works. Somebody can implement it
+        
     }
 }

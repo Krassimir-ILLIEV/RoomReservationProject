@@ -9,7 +9,7 @@
     using RoomReservationWPF.Contracts;
 
     [Serializable]
-    public class Intern : RegularEmployee, IRegularEmployee, ISerializable
+    public class Intern : RegularEmployee, IRegularEmployee, ISerializable, IIntern
     {
         private const int minPeriod = 0;
         private const int maxPeriod = 24;

@@ -7,12 +7,12 @@
     public class Building
     {
         // Fields
-        private int buildingID;
-        private BuildingType buildingType;
-        private BuildingLocationType buildingLocation;
-        private int roomCount;
-        private int floors;
-        private Coordinates coordianates;
+        //private int buildingID;
+        //private BuildingType buildingType;
+        //private BuildingLocationType buildingLocation;
+        //private int roomCount;
+        //private int floors;
+        //private Coordinates coordinates;
 
         // Constructor
         public Building(
@@ -20,14 +20,14 @@
         BuildingType buildingType,
         int roomCount,
         int floors,
-        Coordinates coordinates)
+        Coordinates coordinate)
         {
             this.BuildingID = buildingID;
             this.BuildingLocation = buildingLocation;
             this.BuildingType = buildingType;
             this.RoomCount = roomCount;
             this.Floors = floors;
-            this.Coordinate = coordinates;
+            this.Coordinate = coordinate;
         }
 
         // Properties
@@ -47,17 +47,17 @@
         {
             return string.Format(
                 "Building Id: {0}{1} Location: {2}{3} Type: {4}{5} Capacity: {6}{7} Floors: {8}{9} Coordinates: {10}{11}",
-                this.buildingID,
+                this.BuildingID,
                 Environment.NewLine,
-                this.buildingLocation,
+                this.BuildingLocation,
                 Environment.NewLine,
-                this.buildingType,
+                this.BuildingType,
                 Environment.NewLine,
-                this.roomCount,
+                this.RoomCount,
                 Environment.NewLine,
-                this.floors,
+                this.Floors,
                 Environment.NewLine,
-                this.coordianates,
+                this.Coordinates,
                 Environment.NewLine);
         }
     }
