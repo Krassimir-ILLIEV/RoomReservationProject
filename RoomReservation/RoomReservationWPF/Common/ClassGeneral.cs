@@ -42,7 +42,7 @@ namespace RoomReservationWPF.Common
                 }
                 catch (Exception ex)
                 {
-                    //Log exception here
+                    Console.WriteLine(ex.StackTrace);
                 }
             }
         }
@@ -64,7 +64,7 @@ namespace RoomReservationWPF.Common
                 }
                 catch (Exception ex)
                 {
-                    //Log exception here
+                    Console.WriteLine(ex.StackTrace);
                 }
                 return default(T);
             }

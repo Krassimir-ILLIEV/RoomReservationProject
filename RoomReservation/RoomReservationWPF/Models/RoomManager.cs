@@ -12,44 +12,15 @@
 
     public class RoomManager
     {
-        private const string FileName = @"../../RoomData.csv";
+        public static string FileName = @"../../RoomData.csv";
 
         private static RoomManager instance;
         private static readonly object padlock = new object();
 
-        // private Dictionary<int, Room> rooms;
         private IList<Room> listOfRooms;
         private Dictionary<int, HashSet<Timeslot>> roomSchedule; //int is roomId
-        //private Dictionary<int, SortedSet<Timeslot>> roomSchedule_test;
 
-        //SORTED SET<t> SORTED BY TIMESLOT begintime is better
-
-        //private Scheduler scheduler;
-        private RoomManager()
-        {
-            listOfRooms = new List<Room>();
-            roomSchedule = new Dictionary<int, HashSet<Timeslot>>();
-            var csvlines = File.ReadAllLines(FileName);
-            IEnumerable<Room> csv = from line in File.ReadAllLines(FileName).Skip(1) //ignore first line
-                                    select new Room(line);
-
-            listOfRooms = new List<Room>(csv);
-            roomSchedule = new Dictionary<int, HashSet<Timeslot>>();
-            foreach (Room room in listOfRooms)
-            {
-                roomSchedule.Add(room.RoomID, new HashSet<Timeslot>());
-            }
-        }
-
-        //public RoomManager()
-        //{
-        //    listOfRooms = new List<Room>();
-        //    roomSchedule = new Dictionary<int, HashSet<Timeslot>>();
-        //    //or hashtable<timeslot,beginTime>
-        //    //roomSchedule_test = new Dictionary<int, SortedSet<Timeslot>>();
-        //}
-
-        public RoomManager(string FileName)
+        private RoomManager(string FileName)
          {
             // FileName = @"C:\Users\DerKaiser\Desktop\project GUi\RoomReservation\RoomReservationWPF\RoomData.csv";
             var csvlines = File.ReadAllLines(FileName);
@@ -75,7 +46,7 @@
                     {
                         if (instance == null)
                         {
-                            instance = new RoomManager();
+                            instance = new RoomManager(FileName);
                         }
                     }
                 }
@@ -181,7 +152,7 @@
 
             if (!roomSchedule.ContainsKey(roomId))
             {
-                throw new ArgumentException("TO DO WRITE A MEANINGFUL EXCEPTION");
+                throw new ArgumentException("This room is not included in the timetable (we have no such room)");
             }
             HashSet<Timeslot> roomTimeslots = roomSchedule[roomId];
             StringBuilder timeslotResult = new StringBuilder();

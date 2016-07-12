@@ -13,8 +13,12 @@
         //private int roomCount;
         //private int floors;
         //private Coordinates coordinates;
+        //for future use
 
+        private static int buildingIdGenerator = 1;
+        private int buildingID;
         // Constructor
+
         public Building(
         BuildingLocationType buildingLocation,
         BuildingType buildingType,
@@ -22,7 +26,7 @@
         int floors,
         Coordinates coordinate)
         {
-            this.BuildingID = buildingID;
+            this.BuildingID = buildingIdGenerator++;
             this.BuildingLocation = buildingLocation;
             this.BuildingType = buildingType;
             this.RoomCount = roomCount;
@@ -31,7 +35,11 @@
         }
 
         // Properties
-        public int BuildingID { get; private set; }
+        public int BuildingID
+        {
+            get { return this.buildingID; }
+            private set { this.buildingID = value; }
+        }
 
         public BuildingType BuildingType { get; private set; }
         
@@ -57,7 +65,7 @@
                 Environment.NewLine,
                 this.Floors,
                 Environment.NewLine,
-                this.Coordinates,
+                this.Coordinate,
                 Environment.NewLine);
         }
     }

@@ -14,20 +14,20 @@
         private const int minScreenSize = 40;
         private const int maxScreenSize = 500;
 
+        private MultimediaType mType;
         private string model;
         private int brightness;
         private int suportedScreenSize;
-        private MultimediaType mType;
 
         public MultimediaDevice()
         {
         }
         public MultimediaDevice(SerializationInfo info, StreamingContext context)
         {
+            this.mType = (MultimediaType)info.GetValue("mType", typeof(MultimediaType));
             this.model = (string)info.GetValue("model", typeof(string));
             this.brightness = (int)info.GetValue("brightness", typeof(int));
             this.suportedScreenSize = (int)info.GetValue("suportedScreenSize", typeof(int));
-            this.mType = (MultimediaType)info.GetValue("mType", typeof(MultimediaType));
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

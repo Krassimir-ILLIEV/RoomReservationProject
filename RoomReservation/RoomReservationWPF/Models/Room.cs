@@ -25,13 +25,12 @@
         private int floor;
         private List<MultimediaDevice> listMultimedia;
         private CapacityRangeType capacityRange;
-        private decimal rentPricePerHour;
         private Location location;
         private int lastScore;
 
         public Room(SerializationInfo info, StreamingContext context)
         {
-            this.rentPricePerHour = (decimal)info.GetValue("rentPricePerHour", typeof(decimal));
+            this.RentPricePerHour = (decimal)info.GetValue("RentPricePerHour", typeof(decimal));
             this.capacity = (int)info.GetValue("capacity", typeof(int));
             this.floor = (int)info.GetValue("floor", typeof(int));
             this.RoomTypeProp = (RoomType)info.GetValue("RoomTypeProp", typeof(RoomType));
@@ -46,7 +45,7 @@
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("rentPricePerHour", this.rentPricePerHour, typeof(decimal));
+            info.AddValue("RentPricePerHour", this.RentPricePerHour, typeof(decimal));
             info.AddValue("capacity", this.capacity, typeof(int));
             info.AddValue("floor", this.floor, typeof(int));
             info.AddValue("RoomTypeProp", this.RoomTypeProp, typeof(RoomType));

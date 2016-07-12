@@ -8,7 +8,7 @@
     using RoomReservationWPF.Contracts;
 
     [Serializable]
-    public class DepartmentManager : UnitManager, IRegularEmployee, ISerializable,IDepartmentManager,
+    public class DepartmentManager : UnitManager, IRegularEmployee, ISerializable,IDepartmentManager
     {
         private string department;
 
