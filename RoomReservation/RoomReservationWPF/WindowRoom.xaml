@@ -1,0 +1,21 @@
+﻿<Window x:Class="RoomReservationWPF.WindowRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WindowRoom" Height="316" Width="712.8">
+    <Grid Margin="0,0,3.4,-2.8">
+        <Image x:Name="img" Height="199" Margin="302,20,10,0" VerticalAlignment="Top"/>
+        <Label Content="Capacity" HorizontalAlignment="Left" Height="29" Margin="35,20,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Label" x:Name="lblCapacity" HorizontalAlignment="Left" Height="29" Margin="140,20,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Floor" HorizontalAlignment="Left" Height="29" Margin="35,60,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Label" x:Name="lblFloor" HorizontalAlignment="Left" Height="29" Margin="140,60,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Type" HorizontalAlignment="Left" Height="29" Margin="35,100,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Label" x:Name="lblType" HorizontalAlignment="Left" Height="29" Margin="140,100,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Rent Price/h" HorizontalAlignment="Left" Height="29" Margin="35,140,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Label" x:Name="lblPrice" HorizontalAlignment="Left" Height="29" Margin="140,140,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Multimedia" HorizontalAlignment="Left" Height="29" Margin="35,180,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="Label" x:Name="lblMultimedia" HorizontalAlignment="Left" Height="29" Margin="140,180,0,0" VerticalAlignment="Top" Width="160"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Height="28" Margin="369,233,0,0" VerticalAlignment="Top" Width="96" Click="ButtonCancel_Click"/>
+        <Button Content="Book" HorizontalAlignment="Left" Height="28" Margin="470,233,0,0" VerticalAlignment="Top" Width="96" Click="ButtonBook_Click"/>
+
+    </Grid>
+</Window>
