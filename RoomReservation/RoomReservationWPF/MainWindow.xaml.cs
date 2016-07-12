@@ -27,7 +27,7 @@ namespace RoomReservationWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RoomManager rm;
+        //private RoomManager rm; //SINGLETON DESIGN PATTERN - EVERYTIME ROOMMANAGER.INSTANCE IS CALLED, THE SAME INSTANCE IS RETURNED
         public static int EventDuration = 0;
         public static MultimediaType MMDType = (MultimediaType)0;
         private static Request req;
@@ -38,7 +38,7 @@ namespace RoomReservationWPF
             //rm = new RoomManager(@"C:\Users\DerKaiser\Desktop\project GUi\RoomReservation\RoomReservationWPF\RoomData.csv");
             //rm = new RoomManager(@"../../RoomData.csv");
             RoomManager.FileName = @"../../RoomData.csv";
-            rm = RoomManager.Instance;
+            RoomManager rm = RoomManager.Instance;
             BeginDate.SelectedDate = DateTime.Now;
             /* tests
              Request req = new Request(new DateTime(2016, 7, 23, 10, 0, 0), 30);
@@ -210,6 +210,7 @@ namespace RoomReservationWPF
                ClassGeneral.GetEnumByName<MultimediaType>(multimediaBox),
                roomTypePriority, rentPriceRangePriority, capacityRangePriority, multimediaTypePriority
                );
+            RoomManager rm = RoomManager.Instance;
             List<Room> recommendedRooms = rm.GetListOfRecommendedRooms(req);
 
             recommendedRooms = recommendedRooms.OrderBy(r => r.ScoreCompatible(req)).Reverse().ToList();
@@ -238,6 +239,7 @@ namespace RoomReservationWPF
                 //System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", arrint[0]));
                 if (isBooked[0])
                 {
+                    RoomManager rm = RoomManager.Instance;
                     rm.BookRoom(SelectedRoom.RoomID, req.Occupation);
                     ClearListView();
                     listView2.ItemsSource = rm.GetSchedules();
@@ -254,6 +256,7 @@ namespace RoomReservationWPF
                 {
 
                     Scheduler SelectedScheduler = (Scheduler)(e.AddedItems[0]);
+                    RoomManager rm = RoomManager.Instance;
                     rm.CancelReservation(SelectedScheduler.RoomID, SelectedScheduler.BeginTime);
                     listView2.ItemsSource = rm.GetSchedules();
                     //System.Windows.Forms.MessageBox.Show(String.Format("Selected: {0}", e.AddedItems[0]));
@@ -267,6 +270,7 @@ namespace RoomReservationWPF
         }
         private void serBtn_Click(object sender, RoutedEventArgs e)
         {
+            RoomManager rm = RoomManager.Instance;
             ClassGeneral.WriteToBinaryFile<RoomManager>(rm, @"../../RoomMng.bin");
             rm = null;
             rm = ClassGeneral.ReadFromBinaryFile<RoomManager>(@"../../RoomMng.bin");
